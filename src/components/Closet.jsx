@@ -44,6 +44,9 @@ export default function Closet({ selectedId, onSelect }) {
                 onClick={() => onSelect(p.id)}
               >
                 <span className="crate-window">
+                  <span className="crate-stamp" aria-hidden="true">
+                    {p.n}
+                  </span>
                   {p.state === 'rotation' &&
                     (p.image ? (
                       <img

@@ -893,20 +893,24 @@ dialog.case-study::backdrop {
   padding: var(--space-2);
   display: inline-block;
 }
-/* The crates run in a grid. */
+/* The crates run in a 4-column grid, every crate the same size. */
 .crates {
   grid-area: stack;
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+.crates > li {
+  display: flex;
 }
 /* Crates are built in CSS: flat red rectangle, ink border, inset paper window,
    ink label strip along the bottom. No gradient, gloss, shadow or radius. */
 .crate {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   text-align: left;
   padding: 0;
@@ -921,6 +925,7 @@ dialog.case-study::backdrop {
   outline-offset: 3px;
 }
 .crate-window {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -931,7 +936,21 @@ dialog.case-study::backdrop {
   border: 2px solid var(--ink);
   overflow: hidden;
 }
+/* Stamped crate number behind the shoe. */
+.crate-stamp {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 850, 'wdth' 66;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0.08;
+  pointer-events: none;
+}
 .crate-window img {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -945,11 +964,20 @@ dialog.case-study::backdrop {
   color: var(--ink);
   opacity: 0.35;
 }
+/* Fixed-height label strip so every crate is the same size regardless of how
+   long the colourway is: number + model on one line, colourway on the next. */
 .crate-label {
-  display: flex;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'n model'
+    'cw cw';
+  column-gap: var(--space-2);
+  row-gap: 2px;
   align-items: baseline;
-  gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
+  min-height: 3.4em;
   border-top: 2px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
@@ -959,17 +987,24 @@ dialog.case-study::backdrop {
   letter-spacing: 1px;
 }
 .crate-n {
+  grid-area: n;
   color: var(--red);
   font-weight: 700;
 }
 .crate-model {
+  grid-area: model;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .crate-colourway {
-  margin-left: auto;
-  text-align: right;
+  grid-area: cw;
   opacity: 0.7;
   font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .closet-credit {
   margin: var(--space-5) 0 0;
@@ -985,6 +1020,11 @@ dialog.case-study::backdrop {
       'aside'
       'stack'
       'note';
+  }
+}
+@media (max-width: 620px) {
+  .crates {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
