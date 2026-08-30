@@ -423,51 +423,78 @@ main section:not(#hero)::before {
   max-width: 46ch;
 }
 
-/* ============ ORIGIN / TIMELINE ============ */
+/* ============ ORIGIN / THE OBSESSION (type-led spread) ============ */
 #origin h2 {
-  font-size: 44px;
+  font-size: clamp(40px, 7vw, 92px);
   margin-bottom: var(--space-5);
 }
-.thread {
-  list-style: none;
-  border-left: 3px dashed var(--ink);
-  margin: 0 0 0 20px;
-  padding-left: 34px;
-  display: flex;
-  flex-direction: column;
-  gap: 46px;
-}
-.entry {
+.obsession {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 460px);
+  gap: var(--space-6);
+  align-items: end;
 }
-.entry::before {
-  content: '👟';
-  position: absolute;
-  left: -53px;
-  top: -4px;
-  font-size: 22px;
-  background: var(--paper);
-  border: 2px solid var(--ink);
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.obsession-copy {
+  max-width: 34ch;
 }
-.entry .card {
-  background: var(--surface);
-  border: 2px solid var(--ink);
-  padding: 20px 24px;
-  max-width: 640px;
-  position: relative;
-}
-.entry .card .yr {
-  font-family: var(--font-display);
+.obsession-year {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
   color: var(--red);
-  font-size: 20px;
+  margin: 0 0 var(--space-2);
 }
-.entry .card p {
-  margin: 0.4em 0 0;
+.obsession-copy p + p {
+  margin-top: var(--space-3);
+}
+/* The book stack anchors the spread at half-width; the flatlay cutout is a
+   hard-edged collage element taped over the text edge, not boxed beside it. */
+.obsession-media {
+  position: relative;
+  margin: 0;
+}
+.obsession-books {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.obsession-cutout {
+  position: absolute;
+  width: 62%;
+  height: auto;
+  left: -34%;
+  bottom: -8%;
+  transform: rotate(-6deg);
+  z-index: 2;
+}
+.obsession-tape {
+  top: -14px;
+  left: 12%;
+  transform: rotate(-7deg);
+  z-index: 3;
+}
+.obsession-note {
+  position: absolute;
+  top: 8%;
+  right: -6%;
+  transform: rotate(7deg);
+  font-size: 26px;
+  color: var(--red);
+  z-index: 4;
+}
+@media (max-width: 760px) {
+  .obsession {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .obsession-cutout {
+    width: 44%;
+    left: auto;
+    right: 2%;
+    bottom: -6%;
+  }
 }
 
 /* ============ WORK: index entry (T08 pattern) ============ */
