@@ -7,7 +7,6 @@ import Work from './components/Work.jsx';
 import Beyond from './components/Beyond.jsx';
 import Doodle from './components/Doodle.jsx';
 import Contact from './components/Contact.jsx';
-import BuildNotes from './components/BuildNotes.jsx';
 
 export default function App() {
   return (
@@ -27,7 +26,6 @@ export default function App() {
         <Contact />
       </main>
       <footer>made with tape, coffee &amp; a little too much scrolling ✂️</footer>
-      <BuildNotes />
     </>
   );
 }
