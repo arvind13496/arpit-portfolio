@@ -3,6 +3,7 @@
   --paper: #e5e1d6; /* newsprint grey-warm */
   --ink: #16140d; /* near black */
   --red: #c8391f; /* the only accent, a single spot ink */
+  --surface: #efece3; /* a defined tint of paper for card and panel surfaces */
   --teal: #2f9c93; /* retained only as the :focus-visible outline colour */
   color-scheme: light;
 }
@@ -134,7 +135,7 @@ button:focus-visible {
   background: repeating-linear-gradient(45deg, #3aa6a0, #3aa6a0 8px, #4ab5ae 8px, #4ab5ae 16px);
 }
 .tape.yellow {
-  background: repeating-linear-gradient(45deg, #e8b84b, #e8b84b 8px, #f0c86a 8px, #f0c86a 16px);
+  background: repeating-linear-gradient(45deg, #c8391f, #c8391f 8px, #d6543d 8px, #d6543d 16px);
 }
 
 /* ---------- nav ---------- */
@@ -156,7 +157,7 @@ nav a {
   font-size: 16px;
   text-decoration: none;
   color: var(--ink);
-  background: #fff;
+  background: var(--surface);
   border: 2px solid var(--ink);
   padding: 8px 16px;
   transform: rotate(-1.5deg);
@@ -300,7 +301,7 @@ section {
 
 /* ============ ABOUT ============ */
 .polaroid {
-  background: #fdfcf7;
+  background: var(--surface);
   padding: 14px 14px 46px;
   width: 230px;
   transform: rotate(-6deg);
@@ -430,7 +431,7 @@ section {
   justify-content: center;
 }
 .entry .card {
-  background: #fffdf5;
+  background: var(--surface);
   border: 2px solid var(--ink);
   padding: 20px 24px;
   max-width: 640px;
@@ -515,7 +516,7 @@ section {
   flex-direction: column;
 }
 .front {
-  background: #fffdf5;
+  background: var(--surface);
   justify-content: space-between;
 }
 .front .tag {
@@ -595,7 +596,7 @@ section {
   text-align: left;
 }
 .craft-card {
-  background: #fffdf5;
+  background: var(--surface);
   border: 2px solid var(--ink);
   overflow: hidden;
 }
@@ -645,7 +646,7 @@ section {
   width: 100%;
   max-width: 720px;
   height: 280px;
-  background: #fffdf5;
+  background: var(--surface);
   border: 2px solid var(--ink);
   touch-action: none;
   cursor: crosshair;
@@ -661,7 +662,7 @@ section {
   font-family: 'Kalam', cursive;
   font-weight: 700;
   border: 2px solid var(--ink);
-  background: #fff;
+  background: var(--surface);
   padding: 8px 16px;
   cursor: pointer;
 }
@@ -708,7 +709,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: var(--surface);
 }
 #contact a.cta {
   display: inline-block;
