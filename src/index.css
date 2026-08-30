@@ -1,14 +1,9 @@
 :root {
-  --paper: #efe4c9;
-  --paper-dark: #e6d8b8;
-  --kraft: #d9c9a3;
-  --ink: #242018;
-  --red: #c8391f;
-  --red-dark: #a12c17;
-  --mustard: #8a6d1f;
-  --teal: #2f9c93;
-  --yellow: #e8b84b;
-  --shadow: 0 10px 25px rgba(30, 20, 0, 0.18);
+  /* Zine palette: three inks, not five. Photography carries every other colour. */
+  --paper: #e5e1d6; /* newsprint grey-warm */
+  --ink: #16140d; /* near black */
+  --red: #c8391f; /* the only accent, a single spot ink */
+  --teal: #2f9c93; /* retained only as the :focus-visible outline colour */
   color-scheme: light;
 }
 
@@ -16,6 +11,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  border-radius: 0; /* zine: nothing is rounded, because nothing was rendered */
 }
 
 html {
@@ -71,8 +67,8 @@ a {
 }
 
 ::selection {
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--red);
+  color: var(--paper);
 }
 
 .sr-only {
@@ -97,7 +93,6 @@ a {
   padding: 12px 20px;
   font-family: 'Kalam', cursive;
   font-weight: 700;
-  border-radius: 0 0 8px 0;
 }
 
 .skip-link:focus {
@@ -115,7 +110,6 @@ button:focus-visible {
   position: fixed;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
   background: var(--red);
   pointer-events: none;
   z-index: 9998;
@@ -135,7 +129,6 @@ button:focus-visible {
   width: 110px;
   height: 34px;
   opacity: 0.85;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 .tape.teal {
   background: repeating-linear-gradient(45deg, #3aa6a0, #3aa6a0 8px, #4ab5ae 8px, #4ab5ae 16px);
@@ -165,10 +158,8 @@ nav a {
   color: var(--ink);
   background: #fff;
   border: 2px solid var(--ink);
-  border-radius: 8px 8px 0 0;
   padding: 8px 16px;
   transform: rotate(-1.5deg);
-  box-shadow: 3px 3px 0 var(--ink);
   transition: transform 0.15s ease;
 }
 nav a:nth-child(2n) {
@@ -176,7 +167,8 @@ nav a:nth-child(2n) {
 }
 nav a:hover {
   transform: translateY(-3px) rotate(0deg);
-  background: var(--yellow);
+  background: var(--red);
+  color: var(--paper);
 }
 
 section {
@@ -226,8 +218,6 @@ section {
   width: 150px;
   height: 150px;
   transform: rotate(9deg);
-  box-shadow: var(--shadow);
-  border-radius: 3px;
   overflow: hidden;
 }
 #hero .hero-photo img {
@@ -312,7 +302,6 @@ section {
 .polaroid {
   background: #fdfcf7;
   padding: 14px 14px 46px;
-  box-shadow: var(--shadow);
   width: 230px;
   transform: rotate(-6deg);
   position: relative;
@@ -321,7 +310,6 @@ section {
 .polaroid .photo {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 2px;
   overflow: hidden;
 }
 .polaroid .photo img {
@@ -363,7 +351,6 @@ section {
   position: absolute;
   inset: 6px;
   border: 2px dashed rgba(255, 255, 255, 0.75);
-  border-radius: 4px;
   pointer-events: none;
 }
 .dropzone svg {
@@ -401,11 +388,9 @@ section {
   background: var(--red);
   color: #fff;
   padding: 14px 22px;
-  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
   font-family: 'Permanent Marker', cursive;
   font-size: 30px;
   transform: rotate(-3deg);
-  box-shadow: var(--shadow);
 }
 #about p.lead {
   font-size: 22px;
@@ -438,7 +423,6 @@ section {
   font-size: 22px;
   background: var(--paper);
   border: 2px solid var(--ink);
-  border-radius: 50%;
   width: 38px;
   height: 38px;
   display: flex;
@@ -448,9 +432,7 @@ section {
 .entry .card {
   background: #fffdf5;
   border: 2px solid var(--ink);
-  border-radius: 4px;
   padding: 20px 24px;
-  box-shadow: 4px 4px 0 var(--ink);
   max-width: 640px;
   position: relative;
 }
@@ -477,7 +459,7 @@ section {
   font-family: 'Kalam', cursive;
   font-weight: 700;
   line-height: 0.92;
-  color: var(--mustard);
+  color: var(--ink);
   font-size: 26px;
 }
 #work h2 {
@@ -528,9 +510,7 @@ section {
   inset: 0;
   backface-visibility: hidden;
   border: 2px solid var(--ink);
-  border-radius: 6px;
   padding: 20px;
-  box-shadow: 5px 5px 0 rgba(36, 32, 24, 0.35);
   display: flex;
   flex-direction: column;
 }
@@ -546,7 +526,6 @@ section {
   background: var(--red);
   align-self: flex-start;
   padding: 3px 10px;
-  border-radius: 10px;
 }
 .front-title {
   font-family: 'Permanent Marker', cursive;
@@ -568,7 +547,7 @@ section {
 }
 .back-title {
   font-family: 'Kalam', cursive;
-  color: var(--yellow);
+  color: var(--red);
   font-size: 16px;
   letter-spacing: 1px;
 }
@@ -579,7 +558,6 @@ section {
 .mockframe {
   margin-top: 10px;
   border: 2px solid var(--paper);
-  border-radius: 4px;
   padding: 8px;
   font-family: 'Kalam', cursive;
   font-size: 13px;
@@ -588,7 +566,6 @@ section {
 }
 .mockframe-img {
   width: 100%;
-  border-radius: 4px;
   margin-top: 10px;
   display: block;
 }
@@ -620,9 +597,7 @@ section {
 .craft-card {
   background: #fffdf5;
   border: 2px solid var(--ink);
-  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 5px 5px 0 rgba(36, 32, 24, 0.3);
 }
 .craft-card .thumb {
   height: 190px;
@@ -672,8 +647,6 @@ section {
   height: 280px;
   background: #fffdf5;
   border: 2px solid var(--ink);
-  border-radius: 6px;
-  box-shadow: 5px 5px 0 rgba(36, 32, 24, 0.3);
   touch-action: none;
   cursor: crosshair;
 }
@@ -690,24 +663,20 @@ section {
   border: 2px solid var(--ink);
   background: #fff;
   padding: 8px 16px;
-  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 3px 3px 0 var(--ink);
 }
 .doodle-tools button:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 var(--ink);
 }
 .swatch {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   padding: 0;
 }
 
 /* ============ CONTACT ============ */
 #contact {
-  background: repeating-linear-gradient(var(--paper) 0 31px, #d8cba3 31px 32px);
+  background: var(--paper);
 }
 #contact h2 {
   font-size: 48px;
@@ -736,7 +705,6 @@ section {
   width: 40px;
   height: 40px;
   border: 2px solid var(--ink);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -751,9 +719,7 @@ section {
   font-family: 'Permanent Marker', cursive;
   font-size: 22px;
   padding: 16px 30px;
-  border-radius: 8px;
   transform: rotate(-2deg);
-  box-shadow: var(--shadow);
   transition: transform 0.15s;
 }
 #contact a.cta:hover {
