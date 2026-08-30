@@ -24,12 +24,6 @@ export default function Contact() {
           <ul>
             <li>
               <span className="ico" aria-hidden="true">
-                📞
-              </span>
-              <a href="tel:+918109443681">+91 8109443681</a>
-            </li>
-            <li>
-              <span className="ico" aria-hidden="true">
                 📷
               </span>
               <a href="https://instagram.com/lakhaniarpit" target="_blank" rel="noopener noreferrer">
