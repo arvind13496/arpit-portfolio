@@ -267,6 +267,7 @@ section {
 #hero .kicker {
   font-family: var(--font-mono);
   font-weight: 700;
+  font-size: 14px;
   color: var(--red);
   letter-spacing: 3px;
   margin: 0;
@@ -300,6 +301,7 @@ section {
   margin-top: 40px;
   font-family: var(--font-mono);
   font-weight: 700;
+  font-size: 13px;
   opacity: 0.7;
 }
 #hero .scrolldown svg {
@@ -344,7 +346,7 @@ section {
   right: 0;
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 22px;
+  font-size: 13px;
   color: var(--ink);
 }
 
@@ -477,9 +479,9 @@ section {
   flex-direction: column;
   font-family: var(--font-mono);
   font-weight: 700;
-  line-height: 0.92;
+  line-height: 1.1;
   color: var(--ink);
-  font-size: 26px;
+  font-size: 14px;
 }
 #work h2 {
   font-size: 44px;
@@ -488,7 +490,7 @@ section {
 #work p.sub {
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 24px;
+  font-size: 14px;
   margin-bottom: 44px;
 }
 
@@ -553,7 +555,7 @@ section {
 }
 .front .hint {
   font-family: var(--font-mono);
-  font-size: 19px;
+  font-size: 13px;
   opacity: 0.65;
   align-self: flex-end;
 }
@@ -567,7 +569,7 @@ section {
 .back-title {
   font-family: var(--font-mono);
   color: var(--red);
-  font-size: 16px;
+  font-size: 12px;
   letter-spacing: 1px;
 }
 .back-text {
@@ -644,6 +646,7 @@ section {
   margin-top: 12px;
   font-family: var(--font-mono);
   font-weight: 700;
+  font-size: 14px;
   color: var(--red);
   text-decoration: none;
   border-bottom: 2px solid var(--red);
@@ -659,7 +662,7 @@ section {
 }
 #doodle p.sub {
   font-family: var(--font-mono);
-  font-size: 22px;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 #doodleCanvas {
@@ -681,6 +684,7 @@ section {
 .doodle-tools button {
   font-family: var(--font-mono);
   font-weight: 700;
+  font-size: 14px;
   border: 2px solid var(--ink);
   background: var(--surface);
   padding: 8px 16px;
@@ -751,7 +755,7 @@ footer {
   text-align: center;
   padding: 30px;
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 13px;
   opacity: 0.7;
 }
 
