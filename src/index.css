@@ -849,7 +849,7 @@ dialog.case-study::backdrop {
 /* ============ CLOSET (movement 07) ============ */
 .closet-layout {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 320px);
+  grid-template-columns: minmax(0, 300px) 1fr;
   grid-template-areas:
     'aside stack'
     'note stack';
@@ -893,14 +893,14 @@ dialog.case-study::backdrop {
   padding: var(--space-2);
   display: inline-block;
 }
-/* The crate stack runs down one column. */
+/* The crates run in a grid. */
 .crates {
   grid-area: stack;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: var(--space-4);
 }
 /* Crates are built in CSS: flat red rectangle, ink border, inset paper window,
@@ -924,9 +924,9 @@ dialog.case-study::backdrop {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 16 / 9;
-  margin: var(--space-3);
-  background: var(--paper);
+  aspect-ratio: 4 / 3;
+  margin: var(--space-2);
+  background: var(--surface);
   border: 2px solid var(--ink);
   overflow: hidden;
 }

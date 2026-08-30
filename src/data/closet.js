@@ -1,10 +1,18 @@
+import continental80 from '../assets/closet-continental-80.webp';
+import blazerMid77 from '../assets/closet-blazer-mid-77.webp';
+import slipstream from '../assets/closet-slipstream.webp';
+import vomero5 from '../assets/closet-vomero-5.webp';
+import awayDay from '../assets/closet-away-day.webp';
+import airMaxDawn from '../assets/closet-air-max-dawn.webp';
+import aeonV2 from '../assets/closet-aeon-v2.webp';
+
 // The closet — nine pairs, numbered 01–09 continuous. Seven in rotation, then
 // two gone (rendered as empty crates). `note` is Arpit's one line about each
 // pair and is his to write; empty for now. `image` is a reference product
-// image (cut out + duotoned), null until imported — see the section credit.
-// Names and colourways verified against the brands; "Fila Montana Plus" is as
-// supplied by the client and could not be verified (likely the Fila
-// Trailblazer) — kept as given since it is in the gone list.
+// image, cut out and duotoned to ink/paper — see the section credit. Names and
+// colourways verified against the brands; "Fila Montana Plus" is as supplied by
+// the client and could not be verified (likely the Fila Trailblazer) — kept as
+// given since it is in the gone list.
 export const closet = [
   {
     id: 'continental-80',
@@ -13,7 +21,7 @@ export const closet = [
     model: 'Continental 80',
     colourway: 'Vegan',
     state: 'rotation',
-    image: null,
+    image: { src: continental80, w: 540, h: 540 },
     note: '',
   },
   {
@@ -23,7 +31,7 @@ export const closet = [
     model: "Blazer Mid '77 Pro Club",
     colourway: 'Light Bone / Sail / Sesame / Pecan',
     state: 'rotation',
-    image: null,
+    image: { src: blazerMid77, w: 540, h: 540 },
     note: '',
   },
   {
@@ -33,7 +41,7 @@ export const closet = [
     model: 'Slipstream',
     colourway: '',
     state: 'rotation',
-    image: null,
+    image: { src: slipstream, w: 540, h: 721 },
     note: '',
   },
   {
@@ -43,7 +51,7 @@ export const closet = [
     model: 'Zoom Vomero 5',
     colourway: 'Metallic Silver / University Red',
     state: 'rotation',
-    image: null,
+    image: { src: vomero5, w: 540, h: 540 },
     note: '',
   },
   {
@@ -53,7 +61,7 @@ export const closet = [
     model: 'Away Day',
     colourway: 'Forest Green',
     state: 'rotation',
-    image: null,
+    image: { src: awayDay, w: 540, h: 540 },
     note: '',
   },
   {
@@ -63,7 +71,7 @@ export const closet = [
     model: 'Air Max Dawn',
     colourway: '',
     state: 'rotation',
-    image: null,
+    image: { src: airMaxDawn, w: 540, h: 603 },
     note: '',
   },
   {
@@ -73,7 +81,7 @@ export const closet = [
     model: 'Aeon v2',
     colourway: 'Mango Chilli',
     state: 'rotation',
-    image: null,
+    image: { src: aeonV2, w: 540, h: 732 },
     note: '',
   },
   {
