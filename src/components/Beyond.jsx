@@ -32,8 +32,8 @@ export default function Beyond() {
         Beyond copy
       </h2>
       <p className="quote" data-reveal>
-        "Having many shoes means I step into a lot of shoes as well — <b>literally &amp; metaphorically</b>, such
-        as..."
+        “Having many shoes means I step into a lot of shoes as well — <b>literally &amp; metaphorically</b>, such
+        as…”
       </p>
       <ul className="duo">
         {CRAFTS.map((craft) => (

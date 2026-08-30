@@ -13,14 +13,20 @@ function sizeTier(text) {
 export default function WorkEntry({ piece, onOpen }) {
   const labelId = `we-label-${piece.slug}`;
   const ctaId = `we-cta-${piece.slug}`;
-  const line = piece.line || piece.client; // fallback until an empty line is written
+  const hasLine = Boolean(piece.line);
 
   return (
     <article className="work-entry" data-reveal>
       <p className="work-entry-label" id={labelId}>
         {piece.tag} <span aria-hidden="true">·</span> {piece.client}
       </p>
-      <h3 className={`work-entry-line ${sizeTier(line)}`}>{line}</h3>
+      {hasLine ? (
+        <h3 className={`work-entry-line ${sizeTier(piece.line)}`}>{piece.line}</h3>
+      ) : (
+        // No pull line yet. Render an obviously unfinished placeholder rather
+        // than falling back to the client name, so it cannot ship by accident.
+        <h3 className="work-entry-line is-placeholder">[ pull line to be written ]</h3>
+      )}
       <button
         type="button"
         className="work-entry-open"
