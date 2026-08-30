@@ -5,6 +5,12 @@
   --red: #c8391f; /* the only accent, a single spot ink */
   --surface: #efece3; /* a defined tint of paper for card and panel surfaces */
   --teal: #2f9c93; /* retained only as the :focus-visible outline colour */
+
+  /* Type: three roles, one hand face. Archivo serves display and body. */
+  --font-display: 'Archivo', system-ui, sans-serif; /* heavy condensed grotesque, uppercase */
+  --font-body: 'Archivo', system-ui, sans-serif; /* normal width, reading size */
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace; /* the spec-sheet voice */
+  --font-marker: 'Permanent Marker', cursive; /* annotation scrawl only */
   color-scheme: light;
 }
 
@@ -36,9 +42,16 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Patrick Hand', cursive;
-  font-size: 19px;
+  font-family: var(--font-body);
+  font-variation-settings: 'wght' 420, 'wdth' 100;
+  font-size: 17px;
+  line-height: 1.6;
   overflow-x: hidden;
+}
+
+p {
+  line-height: 1.6;
+  max-width: 68ch;
 }
 
 body::before {
@@ -54,13 +67,18 @@ body::before {
 h1,
 h2,
 h3 {
-  font-family: 'Permanent Marker', cursive;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 850, 'wdth' 68;
+  font-weight: 850;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: 0;
   margin: 0;
 }
 
 .script {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-marker);
+  text-transform: none;
 }
 
 a {
@@ -92,7 +110,7 @@ a {
   background: var(--ink);
   color: var(--paper);
   padding: 12px 20px;
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
 }
 
@@ -152,7 +170,7 @@ nav {
   border-bottom: 2px dashed var(--ink);
 }
 nav a {
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: 16px;
   text-decoration: none;
@@ -247,7 +265,7 @@ section {
   }
 }
 #hero .kicker {
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   color: var(--red);
   letter-spacing: 3px;
@@ -280,7 +298,7 @@ section {
 }
 #hero .scrolldown {
   margin-top: 40px;
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   opacity: 0.7;
 }
@@ -325,7 +343,7 @@ section {
   left: 0;
   right: 0;
   text-align: center;
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-mono);
   font-size: 22px;
   color: var(--ink);
 }
@@ -343,7 +361,7 @@ section {
   padding: 10px;
   background: linear-gradient(135deg, #ffd9a0, #ff9a76 40%, #c8391f 75%, #6b1e10);
   color: #fff;
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   position: relative;
 }
@@ -389,7 +407,7 @@ section {
   background: var(--red);
   color: #fff;
   padding: 14px 22px;
-  font-family: 'Permanent Marker', cursive;
+  font-family: var(--font-display);
   font-size: 30px;
   transform: rotate(-3deg);
 }
@@ -438,7 +456,7 @@ section {
   position: relative;
 }
 .entry .card .yr {
-  font-family: 'Permanent Marker', cursive;
+  font-family: var(--font-display);
   color: var(--red);
   font-size: 20px;
 }
@@ -457,7 +475,7 @@ section {
 #work .stack {
   display: flex;
   flex-direction: column;
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   line-height: 0.92;
   color: var(--ink);
@@ -469,7 +487,7 @@ section {
 }
 #work p.sub {
   text-align: center;
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-mono);
   font-size: 24px;
   margin-bottom: 44px;
 }
@@ -520,7 +538,7 @@ section {
   justify-content: space-between;
 }
 .front .tag {
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: 13px;
   color: #fff;
@@ -529,12 +547,12 @@ section {
   padding: 3px 10px;
 }
 .front-title {
-  font-family: 'Permanent Marker', cursive;
+  font-family: var(--font-display);
   font-size: 24px;
   margin-top: 10px;
 }
 .front .hint {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-mono);
   font-size: 19px;
   opacity: 0.65;
   align-self: flex-end;
@@ -547,7 +565,7 @@ section {
   gap: 8px;
 }
 .back-title {
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   color: var(--red);
   font-size: 16px;
   letter-spacing: 1px;
@@ -560,7 +578,7 @@ section {
   margin-top: 10px;
   border: 2px solid var(--paper);
   padding: 8px;
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-size: 13px;
   opacity: 0.85;
   background: rgba(255, 255, 255, 0.06);
@@ -576,9 +594,11 @@ section {
   text-align: center;
 }
 #beyond .quote {
-  font-family: 'Caveat', cursive;
-  font-size: 30px;
-  max-width: 26ch;
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 800, 'wdth' 70;
+  text-transform: uppercase;
+  font-size: 40px;
+  max-width: 18ch;
   margin: 0 auto 50px;
   line-height: 1.25;
 }
@@ -622,7 +642,7 @@ section {
 .craft-card a.watch {
   display: inline-block;
   margin-top: 12px;
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   color: var(--red);
   text-decoration: none;
@@ -638,7 +658,7 @@ section {
   margin-bottom: 8px;
 }
 #doodle p.sub {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-mono);
   font-size: 22px;
   margin-bottom: 20px;
 }
@@ -659,7 +679,7 @@ section {
   flex-wrap: wrap;
 }
 .doodle-tools button {
-  font-family: 'Kalam', cursive;
+  font-family: var(--font-mono);
   font-weight: 700;
   border: 2px solid var(--ink);
   background: var(--surface);
@@ -717,7 +737,7 @@ section {
   background: var(--red);
   color: #fff;
   text-decoration: none;
-  font-family: 'Permanent Marker', cursive;
+  font-family: var(--font-display);
   font-size: 22px;
   padding: 16px 30px;
   transform: rotate(-2deg);
@@ -730,7 +750,7 @@ section {
 footer {
   text-align: center;
   padding: 30px;
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-mono);
   font-size: 20px;
   opacity: 0.7;
 }
