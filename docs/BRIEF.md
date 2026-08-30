@@ -175,18 +175,19 @@ work they can buy.
 nothing.
 - The Economist, billboard. Brief: one line, on a flyover, read in 3 seconds at
   60kmph. No subhead, no explanation.
-- Liquid Death, 404 page. Brief: make an error 404 page for Liquid Death.
-  The line "THIS PAGE IS DEAD, BURIED." is the best on the site. Set it at cover scale.
+- The Whole Truth, insert card inside a first order.
 
 **Movement 04, long copy.** One spread each, live text at reading size.
 - Mad Ad Woman, Instagram ad. Long copy, single story.
 - Dove, magazine ad. Long copy about real skin.
 - Diesel, cinema ad. 45 to 60 seconds, brave-stupid over safe-smart.
-- The Whole Truth, insert card inside a first order.
+- Liquid Death, 404 page. Brief: make an error 404 page for Liquid Death.
+  The line "THIS PAGE IS DEAD, BURIED." is the best on the site. Set it at cover scale.
 
 **Movement 06, commercial close.** Things a founder can price.
-- Mailchimp, cold email to a D2C founder who has never sent a marketing email.
 - Duolingo, full metro coach wrap.
+- Mailchimp, cold email to a D2C founder who has never sent a marketing email.
+  Flagged for rewrite or removal.
 
 ### Movement 03 content
 
