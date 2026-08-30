@@ -12,11 +12,14 @@ export default function CustomCursor() {
     if (isTouch || prefersReduced) return;
 
     const dot = dotRef.current;
+    // Read the spot colour from the token rather than hardcoding a hex.
+    const red = getComputedStyle(document.documentElement).getPropertyValue('--red').trim() || 'red';
     const move = (e) => {
       gsap.to(dot, { left: e.clientX, top: e.clientY, duration: 0.12, ease: 'power1.out' });
     };
-    const grow = () => gsap.to(dot, { width: 26, height: 26, backgroundColor: 'rgba(200,57,31,.5)', duration: 0.15 });
-    const shrink = () => gsap.to(dot, { width: 10, height: 10, backgroundColor: '#c8391f', duration: 0.15 });
+    const grow = () =>
+      gsap.to(dot, { width: 26, height: 26, backgroundColor: 'rgba(200,57,31,.5)', duration: 0.15 });
+    const shrink = () => gsap.to(dot, { width: 10, height: 10, backgroundColor: red, duration: 0.15 });
 
     window.addEventListener('mousemove', move);
     const interactive = document.querySelectorAll('a, button, .card3d, .swatch');

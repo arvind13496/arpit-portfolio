@@ -30,8 +30,8 @@ export default function Hero() {
   return (
     <section id="hero" aria-label="Introduction">
       <div className="crease" aria-hidden="true" />
-      <div className="tape teal t1" aria-hidden="true" />
-      <div className="tape yellow t2" aria-hidden="true" />
+      <div className="tape ink t1" aria-hidden="true" />
+      <div className="tape red t2" aria-hidden="true" />
       <div className="hero-photo">
         <img src={heroPhoto} alt="Arpit lying back holding a green sneaker up to his face" />
       </div>
@@ -44,16 +44,25 @@ export default function Hero() {
       <svg className="sneaker-doodle" viewBox="0 0 100 60" fill="none" aria-hidden="true">
         <path
           d="M5 45 C10 20 30 10 45 12 C55 13 55 22 65 22 C75 22 78 15 85 18 C93 21 95 32 95 40 C95 46 90 48 80 48 L15 48 C8 48 5 47 5 45 Z"
-          fill="#c8391f"
-          stroke="#242018"
+          style={{ fill: 'var(--red)', stroke: 'var(--ink)' }}
           strokeWidth="2"
         />
-        <path d="M5 45 C25 40 60 40 95 40" stroke="#242018" strokeWidth="2" fill="none" />
+        <path
+          d="M5 45 C25 40 60 40 95 40"
+          style={{ stroke: 'var(--ink)' }}
+          strokeWidth="2"
+          fill="none"
+        />
       </svg>
       <p className="scrolldown">
         keep scrolling
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="#242018" strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M12 4v16m0 0l-6-6m6 6l6-6"
+            style={{ stroke: 'var(--ink)' }}
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
         </svg>
       </p>
     </section>
