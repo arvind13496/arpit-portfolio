@@ -508,6 +508,12 @@ main section:not(#hero)::before {
 /* ============ WORK: index entry (T08 pattern) ============ */
 .work-entry {
   padding: var(--space-4) 0;
+  /* Fixed minimum height so the dividing rules keep a regular rhythm whether
+     the line sits on one row or two. Covers the tallest two-row case. */
+  min-height: 17rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .work-entry-label {
   font-family: var(--font-mono);
@@ -526,14 +532,16 @@ main section:not(#hero)::before {
   margin: 0 0 var(--space-3);
   transition: color 0.15s ease;
 }
+/* Narrow size band — the 40–70 character target does most of the levelling
+   now, so the tiers only nudge the extremes. */
 .work-entry-line.size-l {
-  font-size: clamp(38px, 7vw, 92px);
+  font-size: clamp(40px, 5vw, 68px);
 }
 .work-entry-line.size-m {
-  font-size: clamp(32px, 5vw, 64px);
+  font-size: clamp(34px, 4.2vw, 56px);
 }
 .work-entry-line.size-s {
-  font-size: clamp(26px, 3.4vw, 44px);
+  font-size: clamp(28px, 3.4vw, 46px);
 }
 /* Unfinished pull line: obviously not shippable. */
 .work-entry-line.is-placeholder {

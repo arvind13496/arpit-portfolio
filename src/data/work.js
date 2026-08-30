@@ -2,6 +2,7 @@ export const workCards = [
   {
     tag: '404 page',
     client: 'Liquid Death',
+    // Out of band (26 chars, target 40–70) — Arpit's line, kept as-is.
     line: 'THIS PAGE IS DEAD, BURIED.',
     critique: '',
     brief: 'Make an error 404 page for Liquid Death.',
@@ -18,6 +19,7 @@ export const workCards = [
   {
     tag: 'metro wrap',
     client: 'Duolingo',
+    // Out of band (106 chars, target 40–70) — Arpit's line, kept as-is.
     line: 'Jitni der scroll karne me waste kiya, utni der me French me ask out karna seekh jaate. Anyways, your loss.',
     critique: '',
     brief: 'Write a full metro-coach wrap for Duolingo.',
@@ -43,6 +45,7 @@ export const workCards = [
   {
     tag: 'cinema ad',
     client: 'Diesel',
+    // Out of band (19 chars, target 40–70) — Arpit's line, kept as-is.
     line: 'Be Bold. Be Stupid.',
     critique: '',
     brief: 'Write a 45–60 second cinema ad for Diesel, playing right before a Friday-night blockbuster. The crowd just paid ₹600 for popcorn — one gloriously dumb, joyful decision already made. Diesel celebrates brave-stupid over safe-smart. Reckless on purpose.',
@@ -51,6 +54,7 @@ export const workCards = [
   {
     tag: 'insert card',
     client: 'The Whole Truth',
+    // Out of band (104 chars, target 40–70) — Arpit's line, kept as-is.
     line: 'The Whole Truth is that this product is not the sweetest out there. And it’s certainly not the cheapest.',
     critique: '',
     brief: 'Write the little insert card inside someone\'s first-ever Whole Truth order.',
