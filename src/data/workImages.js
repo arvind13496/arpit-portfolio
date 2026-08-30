@@ -1,11 +1,11 @@
-import liquidDeathImg from '../assets/liquid-death.jpg';
-import mailchimpImg from '../assets/mailchimp.jpg';
-import duolingoImg from '../assets/duolingo.jpg';
-import economistImg from '../assets/economist.jpg';
-import madAdWomanImg from '../assets/mad-ad-woman.jpg';
-import dieselImg from '../assets/diesel.jpg';
-import wholeTruthImg from '../assets/whole-truth.jpg';
-import doveImg from '../assets/dove.jpg';
+import liquidDeathImg from '../assets/liquid-death.webp';
+import mailchimpImg from '../assets/mailchimp.webp';
+import duolingoImg from '../assets/duolingo.webp';
+import economistImg from '../assets/economist.webp';
+import madAdWomanImg from '../assets/mad-ad-woman.webp';
+import dieselImg from '../assets/diesel.webp';
+import wholeTruthImg from '../assets/whole-truth.webp';
+import doveImg from '../assets/dove.webp';
 
 // Finished mockup per client, with intrinsic pixel dimensions so the overlay
 // image can carry width/height and reserve its space before it loads.

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import heroPhoto from '../assets/hero-photo.jpg';
-import hammock from '../assets/hammock.jpg';
+import heroPhoto from '../assets/hero-photo.webp';
+import hammock from '../assets/hammock.webp';
 
 export default function Hero() {
   const headingRef = useRef(null);
@@ -34,12 +34,12 @@ export default function Hero() {
       <div className="hero-photo">
         <img
           src={heroPhoto}
-          width="800"
-          height="800"
+          width="300"
+          height="300"
           alt="Arpit lying back holding a green sneaker up to his face"
         />
       </div>
-      <img className="hammock" src={hammock} width="900" height="312" alt="" aria-hidden="true" />
+      <img className="hammock" src={hammock} width="520" height="180" alt="" aria-hidden="true" />
       <p className="kicker">ARPIT LAKHANI'S</p>
       <h1 className="big" ref={headingRef}>
         <span>port</span>

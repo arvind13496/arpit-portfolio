@@ -1,5 +1,5 @@
 import { useReveal } from '../hooks/useReveal.js';
-import aboutPhoto from '../assets/about-photo.jpg';
+import aboutPhoto from '../assets/about-photo.webp';
 
 export default function About() {
   const scope = useReveal();
@@ -20,8 +20,8 @@ export default function About() {
         <div className="photo">
           <img
             src={aboutPhoto}
-            width="800"
-            height="834"
+            width="460"
+            height="480"
             alt="Polaroid of Arpit holding a green sneaker up to his face"
           />
         </div>

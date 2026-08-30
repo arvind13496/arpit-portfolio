@@ -44,8 +44,11 @@ export default function Origin() {
             alt=""
             aria-hidden="true"
           />
-          <span className="obsession-note script" aria-hidden="true">
-            still chasing drops
+          {/* Marker annotation slot. The line needs writing by Arpit; until
+              then, an obviously unfinished placeholder so nothing agent-written
+              ships as his voice. */}
+          <span className="obsession-note is-placeholder" aria-hidden="true">
+            [ marker note to be written ]
           </span>
         </figure>
       </div>

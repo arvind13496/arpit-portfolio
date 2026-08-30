@@ -1,6 +1,6 @@
 import { useReveal } from '../hooks/useReveal.js';
-import foleyArtistImg from '../assets/foley-artist.jpg';
-import vocalistImg from '../assets/vocalist.jpg';
+import foleyArtistImg from '../assets/foley-artist.webp';
+import vocalistImg from '../assets/vocalist.webp';
 
 const CRAFTS = [
   {
