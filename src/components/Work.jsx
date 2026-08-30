@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useReveal } from '../hooks/useReveal.js';
 import { workCards, slugify, workBySlug } from '../data/work.js';
-import WorkCard from './WorkCard.jsx';
 import WorkEntry from './WorkEntry.jsx';
 import CaseStudyDialog from './CaseStudyDialog.jsx';
 
@@ -15,11 +14,6 @@ export default function Work() {
     () => workCards.map((c) => ({ ...c, slug: slugify(c.client) })),
     []
   );
-  // T08 builds the index-plus-overlay pattern for The Economist only; the
-  // remaining seven stay as flip cards until the pattern is signed off.
-  const entryPiece = pieces.find((p) => p.slug === 'the-economist');
-  const cardPieces = workCards.filter((c) => slugify(c.client) !== 'the-economist');
-
   const [activeSlug, setActiveSlug] = useState(null);
   const didPushRef = useRef(false);
   const active = activeSlug ? pieces.find((p) => p.slug === activeSlug) : null;
@@ -77,14 +71,13 @@ export default function Work() {
         </div>
       </div>
 
-      {entryPiece && <WorkEntry piece={entryPiece} onOpen={open} />}
-
-      <p className="sub">click a card to flip it and see the brief ↷</p>
-      <ul className="cards">
-        {cardPieces.map((card) => (
-          <WorkCard key={card.client} {...card} />
+      <ol className="work-index">
+        {pieces.map((piece) => (
+          <li key={piece.slug}>
+            <WorkEntry piece={piece} onOpen={open} />
+          </li>
         ))}
-      </ul>
+      </ol>
 
       <CaseStudyDialog
         pieces={pieces}

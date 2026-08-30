@@ -63,7 +63,9 @@ export default function CaseStudyDialog({ pieces, active, onRequestClose, onNavi
       {active && (
         <div className="case-study-inner">
           <div className="case-study-bar">
-            <p className="case-study-label">{label}</p>
+            <p className="case-study-label" id="case-study-title" ref={titleRef} tabIndex={-1}>
+              {label}
+            </p>
             <div className="case-study-controls">
               <button
                 type="button"
@@ -95,15 +97,11 @@ export default function CaseStudyDialog({ pieces, active, onRequestClose, onNavi
           </div>
 
           <div className="case-study-body">
-            <h2 id="case-study-title" ref={titleRef} tabIndex={-1} className="case-study-title">
-              {active.client}
-            </h2>
+            <p className="case-study-heading">The copy</p>
+            <p className="case-study-copy">{active.copy}</p>
 
             <p className="case-study-heading">The brief</p>
             <p className="case-study-brief">{active.brief}</p>
-
-            <p className="case-study-heading">The copy</p>
-            <p className="case-study-copy">{active.copy}</p>
 
             {/* Margin slot for the T09 self-critique, set as a marker note. */}
             {active.critique && <aside className="case-study-critique">{active.critique}</aside>}

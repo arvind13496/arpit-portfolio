@@ -517,7 +517,7 @@ main section:not(#hero)::before {
 
 /* ============ WORK: index entry (T08 pattern) ============ */
 .work-entry {
-  margin: var(--space-4) 0 var(--space-5);
+  padding: var(--space-4) 0;
 }
 .work-entry-label {
   font-family: var(--font-mono);
@@ -526,39 +526,45 @@ main section:not(#hero)::before {
   letter-spacing: 1px;
   margin: 0 0 var(--space-2);
 }
-.work-entry-open {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
 .work-entry-line {
   display: block;
   font-family: var(--font-display);
   font-variation-settings: 'wght' 850, 'wdth' 66;
   text-transform: uppercase;
-  font-size: clamp(36px, 7vw, 92px);
   line-height: 0.92;
   color: var(--ink);
+  margin: 0 0 var(--space-3);
   transition: color 0.15s ease;
 }
-.work-entry-open:hover .work-entry-line,
-.work-entry-open:focus-visible .work-entry-line {
+.work-entry-line.size-l {
+  font-size: clamp(38px, 7vw, 92px);
+}
+.work-entry-line.size-m {
+  font-size: clamp(32px, 5vw, 64px);
+}
+.work-entry-line.size-s {
+  font-size: clamp(26px, 3.4vw, 44px);
+}
+.work-entry:hover .work-entry-line,
+.work-entry:focus-within .work-entry-line {
   color: var(--red);
 }
-.work-entry-cta {
+.work-entry-open {
   display: inline-block;
-  margin-top: var(--space-3);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--red);
   border-bottom: 2px solid var(--red);
+  cursor: pointer;
+}
+.work-entry-open:hover,
+.work-entry-open:focus-visible {
+  background: var(--red);
+  color: var(--paper);
 }
 
 /* ============ WORK: case-study overlay (T08 pattern) ============ */
@@ -572,7 +578,7 @@ dialog.case-study {
   color: var(--ink);
 }
 dialog.case-study::backdrop {
-  background: rgba(22, 20, 13, 0.62);
+  background: color-mix(in srgb, var(--ink) 90%, transparent);
 }
 .case-study-inner {
   display: flex;
@@ -627,13 +633,7 @@ dialog.case-study::backdrop {
   overflow-y: auto;
   padding: var(--space-4) var(--space-3);
 }
-.case-study-title {
-  font-family: var(--font-display);
-  font-variation-settings: 'wght' 850, 'wdth' 68;
-  text-transform: uppercase;
-  font-size: clamp(32px, 5vw, 60px);
-  line-height: 0.94;
-  margin: 0 0 var(--space-4);
+.case-study-label:focus {
   outline: none;
 }
 .case-study-heading {
@@ -644,15 +644,16 @@ dialog.case-study::backdrop {
   color: var(--red);
   margin: 0 0 var(--space-1);
 }
+/* The copy is the dominant element of the overlay. */
+.case-study-copy {
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.28;
+  max-width: 26ch;
+  margin: 0 0 var(--space-5);
+}
 .case-study-brief {
   font-family: var(--font-mono);
   font-size: 14px;
-  line-height: 1.6;
-  max-width: 68ch;
-  margin: 0 0 var(--space-4);
-}
-.case-study-copy {
-  font-size: 18px;
   line-height: 1.6;
   max-width: 68ch;
   margin: 0 0 var(--space-4);
@@ -728,107 +729,14 @@ dialog.case-study::backdrop {
 #work h2 {
   font-size: 44px;
 }
-#work p.sub {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  margin-bottom: 44px;
-}
-
-.cards {
+.work-index {
   list-style: none;
-  margin: 0;
+  margin: var(--space-4) 0 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  perspective: 1600px;
+  border-top: 2px solid var(--ink);
 }
-.card3d {
-  height: 300px;
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: none;
-  font: inherit;
-  color: inherit;
-  text-align: left;
-}
-.card3d .inner {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-.card3d.flipped .inner {
-  transform: rotateY(180deg);
-}
-.face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  border: 2px solid var(--ink);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.front {
-  background: var(--surface);
-  justify-content: space-between;
-}
-.front .tag {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 13px;
-  color: #fff;
-  background: var(--red);
-  align-self: flex-start;
-  padding: 3px 10px;
-}
-.front-title {
-  font-family: var(--font-display);
-  font-size: 24px;
-  margin-top: 10px;
-}
-.front .hint {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  opacity: 0.65;
-  align-self: flex-end;
-}
-.back {
-  background: var(--ink);
-  color: var(--paper);
-  transform: rotateY(180deg);
-  overflow: auto;
-  gap: 8px;
-}
-.back-title {
-  font-family: var(--font-mono);
-  color: var(--red);
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-.back-text {
-  font-size: 16px;
-  line-height: 1.4;
-}
-.mockframe {
-  margin-top: 10px;
-  border: 2px solid var(--paper);
-  padding: 8px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  opacity: 0.85;
-  background: rgba(255, 255, 255, 0.06);
-}
-.mockframe-img {
-  width: 100%;
-  margin-top: 10px;
-  display: block;
+.work-index > li {
+  border-bottom: 2px solid var(--ink);
 }
 
 /* ============ BEYOND COPY ============ */
