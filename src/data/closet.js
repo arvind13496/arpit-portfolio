@@ -21,7 +21,7 @@ export const closet = [
     model: 'Continental 80',
     colourway: 'Vegan',
     state: 'rotation',
-    image: { src: continental80, w: 540, h: 540 },
+    image: { src: continental80, w: 500, h: 400 },
     note: '',
   },
   {
@@ -31,7 +31,7 @@ export const closet = [
     model: "Blazer Mid '77 Pro Club",
     colourway: 'Light Bone / Sail / Sesame / Pecan',
     state: 'rotation',
-    image: { src: blazerMid77, w: 540, h: 540 },
+    image: { src: blazerMid77, w: 500, h: 400 },
     note: '',
   },
   {
@@ -41,7 +41,7 @@ export const closet = [
     model: 'Slipstream',
     colourway: '',
     state: 'rotation',
-    image: { src: slipstream, w: 540, h: 721 },
+    image: { src: slipstream, w: 500, h: 400 },
     note: '',
   },
   {
@@ -51,7 +51,7 @@ export const closet = [
     model: 'Zoom Vomero 5',
     colourway: 'Metallic Silver / University Red',
     state: 'rotation',
-    image: { src: vomero5, w: 540, h: 540 },
+    image: { src: vomero5, w: 500, h: 400 },
     note: '',
   },
   {
@@ -61,7 +61,7 @@ export const closet = [
     model: 'Away Day',
     colourway: 'Forest Green',
     state: 'rotation',
-    image: { src: awayDay, w: 540, h: 540 },
+    image: { src: awayDay, w: 500, h: 400 },
     note: '',
   },
   {
@@ -71,7 +71,7 @@ export const closet = [
     model: 'Air Max Dawn',
     colourway: '',
     state: 'rotation',
-    image: { src: airMaxDawn, w: 540, h: 603 },
+    image: { src: airMaxDawn, w: 500, h: 400 },
     note: '',
   },
   {
@@ -81,7 +81,7 @@ export const closet = [
     model: 'Aeon v2',
     colourway: 'Mango Chilli',
     state: 'rotation',
-    image: { src: aeonV2, w: 540, h: 732 },
+    image: { src: aeonV2, w: 500, h: 400 },
     note: '',
   },
   {
