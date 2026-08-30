@@ -73,6 +73,9 @@ Issue 01, spreads, page numbers in the margin. This also gives the nav its activ
 8. No scroll position shows a viewport of empty ground.
 9. At 390px wide the sticky nav occupies one row, 56px maximum.
 10. Every image has explicit width, height, and alt.
+12. No element's visibility may depend on an animation completing. Content is
+    visible by default in CSS; any element hidden by JavaScript must be restored
+    by that same code's cleanup. If the animation layer fails, the page reads.
 
 ## Keep (brief §1) — do not regress
 
