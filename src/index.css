@@ -165,45 +165,86 @@ button:focus-visible {
   background: repeating-linear-gradient(45deg, #c8391f, #c8391f 8px, #d6543d 8px, #d6543d 16px);
 }
 
-/* ---------- nav ---------- */
+/* ---------- nav: the issue contents ---------- */
 nav {
   position: sticky;
   top: 0;
   z-index: 500;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  padding: 14px 10px;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: 10px var(--space-3);
   background: var(--paper);
-  border-bottom: 2px dashed var(--ink);
-}
-nav a {
+  border-bottom: 2px solid var(--ink);
   font-family: var(--font-mono);
+  font-size: 13px;
+  /* One row on every width; scroll horizontally rather than wrapping. */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar {
+  display: none;
+}
+nav .issue {
+  flex: none;
   font-weight: 700;
-  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+nav .contents {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+nav .contents li {
+  flex: none;
+}
+nav .contents a {
   text-decoration: none;
   color: var(--ink);
-  background: var(--surface);
-  border: 2px solid var(--ink);
-  padding: 8px 16px;
-  transform: rotate(-1.5deg);
-  transition: transform 0.15s ease;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
-nav a:nth-child(2n) {
-  transform: rotate(1.5deg);
+nav .contents a .num {
+  color: var(--red);
+  font-weight: 700;
 }
-nav a:hover {
-  transform: translateY(-3px) rotate(0deg);
-  background: var(--red);
-  color: var(--paper);
+nav .contents a:hover {
+  border-bottom-color: var(--ink);
+}
+nav .contents a[aria-current='true'] {
+  font-weight: 700;
+  border-bottom-color: var(--red);
 }
 
+main {
+  counter-reset: spread;
+}
 section {
   position: relative;
   padding: var(--space-6) var(--space-3);
   max-width: 1100px;
   margin: 0 auto;
+}
+/* Spread numbers run in the top margin of each section, like page numbers. */
+main section:not(#hero) {
+  counter-increment: spread;
+}
+main section:not(#hero)::before {
+  content: 'No. ' counter(spread, decimal-leading-zero);
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--red);
 }
 
 /* ============ HERO ============ */

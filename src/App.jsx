@@ -25,7 +25,7 @@ export default function App() {
         <Doodle />
         <Contact />
       </main>
-      <footer>made with tape, coffee &amp; a little too much scrolling ✂️</footer>
+      <footer>Issue 01 &middot; Arpit Lakhani &middot; Mumbai &middot; set in Archivo &amp; Space Mono</footer>
     </>
   );
 }
