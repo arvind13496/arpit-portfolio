@@ -6,9 +6,11 @@ import About from './components/About.jsx';
 import Origin from './components/Origin.jsx';
 import Work from './components/Work.jsx';
 import Beyond from './components/Beyond.jsx';
+import Closet from './components/Closet.jsx';
 import Contact from './components/Contact.jsx';
 import CaseStudyDialog from './components/CaseStudyDialog.jsx';
 import { workCards, slugify } from './data/work.js';
+import { closet } from './data/closet.js';
 
 const HASH = /^#work\/(.+)$/;
 
@@ -24,10 +26,14 @@ const LONG_COPY = pick(['dove', 'liquid-death', 'diesel', 'mad-ad-woman']);
 const COMMERCIAL = pick(['duolingo', 'mailchimp']);
 const NARRATIVE = [...FAST_WORK, ...LONG_COPY, ...COMMERCIAL];
 
+const closetById = Object.fromEntries(closet.map((p) => [p.id, p]));
+
 export default function App() {
   const [activeSlug, setActiveSlug] = useState(null);
+  const [walkId, setWalkId] = useState(null); // the closet pair to walk a mile in
   const didPushRef = useRef(false);
   const active = activeSlug ? bySlug[activeSlug] : null;
+  const walkPair = walkId ? closetById[walkId] : null;
 
   // The URL hash is the source of truth: a shared link opens the piece and the
   // back button closes it. One listener, one dialog, for the whole page.
@@ -91,8 +97,10 @@ export default function App() {
         <Beyond />
         {/* 06 — the commercial close */}
         <Work id="commercial" title="The commercial close" pieces={COMMERCIAL} onOpen={open} />
-        {/* 07 — the closet — does not exist yet */}
-        <Contact />
+        {/* 07 — the closet */}
+        <Closet selectedId={walkId} onSelect={setWalkId} />
+        {/* 08 — sign off */}
+        <Contact walkPair={walkPair} />
       </main>
       <footer>Issue 01 &middot; Arpit Lakhani &middot; Mumbai &middot; set in Archivo &amp; Space Mono</footer>
       <CaseStudyDialog

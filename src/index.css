@@ -846,9 +846,158 @@ dialog.case-study::backdrop {
   padding: 0;
 }
 
+/* ============ CLOSET (movement 07) ============ */
+.closet-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 320px);
+  grid-template-areas:
+    'aside stack'
+    'note stack';
+  gap: var(--space-4) var(--space-6);
+  align-items: start;
+}
+.closet-aside {
+  grid-area: aside;
+}
+.closet-intro {
+  max-width: 40ch;
+  margin: var(--space-3) 0 0;
+}
+.closet-note {
+  grid-area: note;
+  border-top: 2px solid var(--ink);
+  padding-top: var(--space-3);
+}
+.closet-note-hint {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin: 0;
+}
+.closet-note-line {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.3;
+  max-width: 26ch;
+  margin: 0;
+}
+.closet-note-line.is-placeholder {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--red);
+  opacity: 0.6;
+  border: 2px dashed var(--red);
+  padding: var(--space-2);
+  display: inline-block;
+}
+/* The crate stack runs down one column. */
+.crates {
+  grid-area: stack;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+/* Crates are built in CSS: flat red rectangle, ink border, inset paper window,
+   ink label strip along the bottom. No gradient, gloss, shadow or radius. */
+.crate {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  font: inherit;
+  color: var(--ink);
+  background: var(--red);
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
+.crate.is-selected {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.crate-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  margin: var(--space-3);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  overflow: hidden;
+}
+.crate-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.crate-window-tk {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink);
+  opacity: 0.35;
+}
+.crate-label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-top: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.crate-n {
+  color: var(--red);
+  font-weight: 700;
+}
+.crate-model {
+  font-weight: 700;
+}
+.crate-colourway {
+  margin-left: auto;
+  text-align: right;
+  opacity: 0.7;
+  font-size: 11px;
+}
+.closet-credit {
+  margin: var(--space-5) 0 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  opacity: 0.6;
+}
+@media (max-width: 760px) {
+  .closet-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'aside'
+      'stack'
+      'note';
+  }
+}
+
 /* ============ CONTACT ============ */
 #contact {
   background: var(--paper);
+}
+.walk-armed {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--red);
+  margin: var(--space-3) 0 0;
 }
 #contact h2 {
   font-size: 48px;

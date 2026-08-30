@@ -10,7 +10,8 @@ const SPREADS = [
   { id: 'long-copy', n: '04', label: 'the long copy' },
   { id: 'beyond', n: '05', label: 'the other shoes' },
   { id: 'commercial', n: '06', label: 'the commercial close' },
-  { id: 'contact', n: '07', label: "let's talk" },
+  { id: 'closet', n: '07', label: 'the closet' },
+  { id: 'contact', n: '08', label: "let's talk" },
 ];
 
 export default function Nav() {

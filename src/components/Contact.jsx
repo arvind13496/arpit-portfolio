@@ -1,7 +1,15 @@
 import { useReveal } from '../hooks/useReveal.js';
 
-export default function Contact() {
+const EMAIL = 'arpitlakhani16@gmail.com';
+
+export default function Contact({ walkPair }) {
   const scope = useReveal();
+
+  // Selecting a pair in the closet arms the "walk a mile" action here.
+  const subject = walkPair
+    ? `Let’s talk — I’d walk a mile in the ${walkPair.model}`
+    : 'Let’s talk';
+  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
 
   return (
     <section id="contact" aria-labelledby="contact-heading" ref={scope}>
@@ -16,7 +24,12 @@ export default function Contact() {
               or just wanna talk sneakers...
             </span>
           </h2>
-          <a className="cta" href="mailto:arpitlakhani16@gmail.com">
+          {walkPair && (
+            <p className="walk-armed">
+              walking a mile in: <b>{walkPair.model}</b>
+            </p>
+          )}
+          <a className="cta" href={mailto}>
             let's connect →
           </a>
         </div>
