@@ -41,6 +41,8 @@ export default function WorkCard({ tag, client, brief, copy }) {
           <span className="face back" aria-hidden={!flipped}>
             <span className="back-title">THE BRIEF</span>
             <span className="back-text">{brief}</span>
+            <span className="back-title">THE COPY</span>
+            <span className="back-text">{copy}</span>
             {mockImage && (
               <img
                 className="mockframe-img"
