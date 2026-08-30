@@ -293,14 +293,26 @@ all pass.
 This is the phase that decides whether the site works. Everything else is secondary.
 
 - **T08 Copy becomes live text.** Author every spec piece's copy as real selectable HTML
-  at reading size. Retire the flip card: headline leads, brief sits beside or beneath
-  it in mono, mockup is supporting evidence. Mockups open in a real focus trapped
-  `<dialog>`, Escape to close. Long pieces get a full spread each at 60 to 70 character
-  measure, not a 335x300 box.
+  at reading size. Retire the flip card.
+
+  The pattern that landed is **index-plus-overlay**, not inline spreads. On the page each
+  piece is a full-width index entry on the 12-column grid, flush left: a mono format and
+  client label, then the line as the hero in Archivo condensed caps at cover scale, live
+  selectable text, and an affordance that reads as interactive. The full case study lives
+  in a native `<dialog>` opened with `showModal()` (top layer, backdrop and Escape for
+  free): the brief in mono, the full copy at a 60 to 70 character measure, the mockup at
+  full size, and a margin slot for the T09 self-critique. The overlay is focus-managed
+  (focus in on open, back to the trigger on close), body-scroll-locked, deep-linkable
+  (`#work/<slug>`, opening pushes a history entry so the back button closes it and a
+  shared link opens the piece), full screen on mobile and width-capped on desktop, with
+  prev/next controls to move between pieces. Under `prefers-reduced-motion` there is no
+  slide-in, and per hard rule 12 the line and label stay readable if the dialog never
+  opens.
 
   **Build this for The Economist piece only, then stop and get sign off on the pattern
   before applying it to the other seven.** Reviewing one piece instead of eight is where
-  the time goes.
+  the time goes. The Economist entry drops its second copy line ("Nice talking to you →
+  Pleasure doing business with you") — the brief asked for one line, no subhead.
 
 - **T09 Judgment layer.** Each of the four long copy pieces carries one line of self
   critique: what he would cut, what did not work. Set it as a marker annotation in the

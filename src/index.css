@@ -515,6 +515,199 @@ main section:not(#hero)::before {
   margin: 0.4em 0 0;
 }
 
+/* ============ WORK: index entry (T08 pattern) ============ */
+.work-entry {
+  margin: var(--space-4) 0 var(--space-5);
+}
+.work-entry-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 var(--space-2);
+}
+.work-entry-open {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.work-entry-line {
+  display: block;
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 850, 'wdth' 66;
+  text-transform: uppercase;
+  font-size: clamp(36px, 7vw, 92px);
+  line-height: 0.92;
+  color: var(--ink);
+  transition: color 0.15s ease;
+}
+.work-entry-open:hover .work-entry-line,
+.work-entry-open:focus-visible .work-entry-line {
+  color: var(--red);
+}
+.work-entry-cta {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+}
+
+/* ============ WORK: case-study overlay (T08 pattern) ============ */
+dialog.case-study {
+  width: min(880px, 100vw);
+  max-width: 100vw;
+  max-height: 90vh;
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+}
+dialog.case-study::backdrop {
+  background: rgba(22, 20, 13, 0.62);
+}
+.case-study-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+.case-study-bar {
+  flex: none;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
+}
+.case-study-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.case-study-controls {
+  display: flex;
+  gap: var(--space-2);
+}
+.cs-nav,
+.cs-close {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: none;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.cs-nav[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.cs-nav:hover:not([disabled]),
+.cs-close:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.case-study-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-3);
+}
+.case-study-title {
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 850, 'wdth' 68;
+  text-transform: uppercase;
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 0.94;
+  margin: 0 0 var(--space-4);
+  outline: none;
+}
+.case-study-heading {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--red);
+  margin: 0 0 var(--space-1);
+}
+.case-study-brief {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin: 0 0 var(--space-4);
+}
+.case-study-copy {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin: 0 0 var(--space-4);
+}
+.case-study-critique {
+  font-family: var(--font-marker);
+  color: var(--red);
+  font-size: 18px;
+  line-height: 1.3;
+  max-width: 40ch;
+  margin: 0 0 var(--space-4);
+}
+.case-study-mock {
+  margin: 0;
+}
+.case-study-mock img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--ink);
+}
+.case-study-mock figcaption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: var(--space-1);
+  opacity: 0.7;
+}
+@media (max-width: 640px) {
+  dialog.case-study {
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    border: none;
+  }
+  .case-study-inner {
+    max-height: 100dvh;
+    height: 100dvh;
+  }
+}
+/* Slide-in only when motion is allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  dialog.case-study[open] {
+    animation: cs-in 0.22s ease-out;
+  }
+  @keyframes cs-in {
+    from {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+  }
+}
+
 /* ============ WORK ============ */
 #work .heading {
   display: flex;

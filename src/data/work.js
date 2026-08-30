@@ -21,7 +21,7 @@ export const workCards = [
     tag: 'billboard',
     client: 'The Economist',
     brief: 'Write a hoarding for The Economist. One line, on a flyover, read in 3 seconds at 60kmph. No subhead, no explanation.',
-    copy: '"Make them mean it when they say \'great speaking with you.\'" · "Nice talking to you → Pleasure doing business with you."',
+    copy: '"Make them mean it when they say \'great speaking with you.\'"',
   },
   {
     tag: 'ig ad',
@@ -48,3 +48,17 @@ export const workCards = [
     copy: '"This is what your skin is supposed to look like." (a mirror, reflecting nothing but skin.) "...Dove is here to change that. Beauty isn\'t a goal to achieve, it\'s a feeling. Because this is the only way your skin is supposed to look like."',
   },
 ];
+
+// Stable url-safe slug for a piece, used by the case-study deep links
+// (#work/<slug>). Derived from the client name so the data stays the source
+// of truth.
+export function slugify(client) {
+  return client
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+export const workBySlug = Object.fromEntries(
+  workCards.map((card) => [slugify(card.client), card])
+);
