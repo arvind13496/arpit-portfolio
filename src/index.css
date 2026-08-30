@@ -11,6 +11,15 @@
   --font-body: 'Archivo', system-ui, sans-serif; /* normal width, reading size */
   --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace; /* the spec-sheet voice */
   --font-marker: 'Permanent Marker', cursive; /* annotation scrawl only */
+
+  /* One spacing scale. Use these instead of ad-hoc gaps so the rhythm is
+     consistent and empty ground never reads as a printing error. */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 96px;
   color-scheme: light;
 }
 
@@ -192,7 +201,7 @@ nav a:hover {
 
 section {
   position: relative;
-  padding: 90px 20px;
+  padding: var(--space-6) var(--space-3);
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -342,9 +351,9 @@ section {
 .polaroid figcaption {
   position: absolute;
   bottom: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
+  left: 14px;
+  right: 14px;
+  text-align: left;
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--ink);
@@ -421,8 +430,7 @@ section {
 /* ============ ORIGIN / TIMELINE ============ */
 #origin h2 {
   font-size: 44px;
-  text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: var(--space-5);
 }
 .thread {
   list-style: none;
@@ -471,8 +479,8 @@ section {
   display: flex;
   align-items: center;
   gap: 18px;
-  justify-content: center;
-  margin-bottom: 16px;
+  justify-content: flex-start;
+  margin-bottom: var(--space-2);
 }
 #work .stack {
   display: flex;
@@ -485,10 +493,8 @@ section {
 }
 #work h2 {
   font-size: 44px;
-  text-align: center;
 }
 #work p.sub {
-  text-align: center;
   font-family: var(--font-mono);
   font-size: 14px;
   margin-bottom: 44px;
@@ -592,17 +598,14 @@ section {
 }
 
 /* ============ BEYOND COPY ============ */
-#beyond {
-  text-align: center;
-}
 #beyond .quote {
   font-family: var(--font-display);
   font-variation-settings: 'wght' 800, 'wdth' 70;
   text-transform: uppercase;
-  font-size: 40px;
-  max-width: 18ch;
-  margin: 0 auto 50px;
-  line-height: 1.25;
+  font-size: 44px;
+  max-width: 22ch;
+  margin: 0 0 var(--space-5);
+  line-height: 1.05;
 }
 #beyond .quote b {
   color: var(--red);
@@ -654,7 +657,7 @@ section {
 
 /* ============ DOODLE PAD ============ */
 #doodle {
-  text-align: center;
+  text-align: left;
 }
 #doodle h2 {
   font-size: 40px;
@@ -685,6 +688,7 @@ section {
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 14px;
+  text-align: left;
   border: 2px solid var(--ink);
   background: var(--surface);
   padding: 8px 16px;
@@ -752,8 +756,8 @@ section {
 }
 
 footer {
-  text-align: center;
-  padding: 30px;
+  text-align: left;
+  padding: var(--space-4) var(--space-3);
   font-family: var(--font-mono);
   font-size: 13px;
   opacity: 0.7;
