@@ -679,25 +679,6 @@ dialog.case-study::backdrop {
 }
 
 /* ============ WORK ============ */
-#work .heading {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  justify-content: flex-start;
-  margin-bottom: var(--space-2);
-}
-#work .stack {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--ink);
-  font-size: 14px;
-}
-#work h2 {
-  font-size: 44px;
-}
 .work-index {
   list-style: none;
   margin: var(--space-4) 0 0;
@@ -728,6 +709,15 @@ dialog.case-study::backdrop {
 #beyond .quote b {
   color: var(--red);
   font-style: normal;
+}
+/* "The rule" closes the section as its thesis. */
+#beyond .quote.rule {
+  margin-top: var(--space-5);
+}
+#beyond .quote.rule .script {
+  display: inline-block;
+  color: var(--red);
+  font-size: 0.6em;
 }
 .duo {
   list-style: none;

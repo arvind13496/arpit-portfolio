@@ -51,6 +51,10 @@ export default function Beyond() {
           </li>
         ))}
       </ul>
+      <p className="quote rule" data-reveal>
+        I wouldn’t have a problem walking a mile in someone else’s shoes. The shoes must be cool tho — and my
+        size <span className="script">(UK 10 if you’re wondering)</span>.
+      </p>
     </section>
   );
 }

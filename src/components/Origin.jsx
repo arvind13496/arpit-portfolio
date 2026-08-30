@@ -9,15 +9,6 @@ const ENTRIES = [
     year: 'since then',
     text: 'Sneakers have inspired me to create stuff — ad campaigns, cold emails, metro wraps, even foley sound design. Turns out chasing a good drop and chasing a good headline take the same kind of obsessive brain.',
   },
-  {
-    year: 'the rule',
-    html: (
-      <>
-        I wouldn't have a problem walking a mile in someone else's shoes. The shoes must be cool tho... and my size{' '}
-        <span className="script">(UK 10 if you're wondering)</span>.
-      </>
-    ),
-  },
 ];
 
 export default function Origin() {

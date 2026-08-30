@@ -5,11 +5,12 @@ import { useEffect, useState } from 'react';
 // rendered in App; this list is renumbered when the braid lands in T05.
 const SPREADS = [
   { id: 'about', n: '01', label: 'about' },
-  { id: 'origin', n: '02', label: 'the obsession' },
-  { id: 'work', n: '03', label: 'spec work' },
-  { id: 'beyond', n: '04', label: 'beyond copy' },
-  { id: 'doodle', n: '05', label: 'doodle pad' },
-  { id: 'contact', n: '06', label: "let's talk" },
+  { id: 'fast-work', n: '02', label: 'fast work' },
+  { id: 'origin', n: '03', label: 'the obsession' },
+  { id: 'long-copy', n: '04', label: 'the long copy' },
+  { id: 'beyond', n: '05', label: 'the other shoes' },
+  { id: 'commercial', n: '06', label: 'the commercial close' },
+  { id: 'contact', n: '07', label: "let's talk" },
 ];
 
 export default function Nav() {
