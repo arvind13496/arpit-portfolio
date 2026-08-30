@@ -17,12 +17,16 @@ export function useReveal(deps = []) {
       : [];
     if (!targets.length) return;
 
-    if (prefersReduced) {
+    // Rule 12: content reads even if the animation layer never runs. When
+    // motion is off or the tab is hidden (rAF paused, so the reveal tween
+    // would never complete), show everything at its resting state instead
+    // of leaving it stranded at opacity 0.
+    if (prefersReduced || document.hidden) {
       gsap.set(targets, { opacity: 1, y: 0, rotate: 0 });
       return;
     }
 
-    const triggers = [];
+    const tweens = [];
     targets.forEach((el) => {
       gsap.set(el, { opacity: 0, y: 40, rotate: -1 });
       const st = gsap.to(el, {
@@ -37,11 +41,19 @@ export function useReveal(deps = []) {
           toggleActions: 'play none none none',
         },
       });
-      triggers.push(st);
+      tweens.push(st);
     });
 
+    // Restore what this effect hid: kill each tween and its ScrollTrigger,
+    // then clear the inline opacity/transform so every target falls back to
+    // its CSS-visible default. Content must never be stranded hidden by a
+    // torn-down (StrictMode / HMR / unmount) animation.
     return () => {
-      triggers.forEach((t) => t.scrollTrigger && t.scrollTrigger.kill());
+      tweens.forEach((t) => {
+        if (t.scrollTrigger) t.scrollTrigger.kill();
+        t.kill();
+      });
+      gsap.set(targets, { clearProps: 'opacity,transform' });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);

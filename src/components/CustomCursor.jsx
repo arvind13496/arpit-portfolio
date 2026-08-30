@@ -31,6 +31,7 @@ export default function CustomCursor() {
         el.removeEventListener('mouseenter', grow);
         el.removeEventListener('mouseleave', shrink);
       });
+      gsap.killTweensOf(dot);
     };
   }, []);
 

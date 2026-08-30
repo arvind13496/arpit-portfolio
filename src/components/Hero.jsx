@@ -7,13 +7,24 @@ export default function Hero() {
   const headingRef = useRef(null);
 
   useEffect(() => {
+    const el = headingRef.current;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced || !headingRef.current) return;
-    gsap.fromTo(
-      headingRef.current,
+    // Rule 12: never gate visibility on an animation that may not run. If
+    // motion is off or the tab is hidden (rAF paused, tween can't complete),
+    // leave the heading at its CSS-visible default instead of hiding it.
+    if (prefersReduced || !el || document.hidden) return;
+    const tween = gsap.fromTo(
+      el,
       { opacity: 0, y: 24 },
       { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', delay: 0.2 }
     );
+    // Restore what this effect hid: kill the tween and clear the inline
+    // opacity/transform so the heading falls back to its CSS-visible state.
+    // Without this, StrictMode's double-invoke can strand it at opacity 0.
+    return () => {
+      tween.kill();
+      gsap.set(el, { clearProps: 'opacity,transform' });
+    };
   }, []);
 
   return (
