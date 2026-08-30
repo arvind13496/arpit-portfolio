@@ -18,7 +18,12 @@ export default function About() {
       </div>
       <figure className="polaroid" data-reveal>
         <div className="photo">
-          <img src={aboutPhoto} alt="Polaroid of Arpit holding a green sneaker up to his face" />
+          <img
+            src={aboutPhoto}
+            width="800"
+            height="834"
+            alt="Polaroid of Arpit holding a green sneaker up to his face"
+          />
         </div>
         <figcaption>obsessed since 2016</figcaption>
       </figure>

@@ -108,7 +108,12 @@ export default function CaseStudyDialog({ pieces, active, onRequestClose, onNavi
 
             {mock && (
               <figure className="case-study-mock">
-                <img src={mock} alt={`Finished ${active.client} ${active.tag} mockup`} />
+                <img
+                  src={mock.src}
+                  width={mock.w}
+                  height={mock.h}
+                  alt={`Finished ${active.client} ${active.tag} mockup`}
+                />
                 <figcaption>{active.tag}</figcaption>
               </figure>
             )}

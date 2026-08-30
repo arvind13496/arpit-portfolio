@@ -158,13 +158,6 @@ button:focus-visible {
   height: 34px;
   opacity: 0.85;
 }
-.tape.ink {
-  background: repeating-linear-gradient(
-    45deg,
-    var(--ink) 0 8px,
-    color-mix(in srgb, var(--ink) 78%, white) 8px 16px
-  );
-}
 .tape.red {
   background: repeating-linear-gradient(
     45deg,
@@ -277,11 +270,6 @@ main section:not(#hero)::before {
     radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.05), transparent 40%),
     radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.06), transparent 45%);
   pointer-events: none;
-}
-#hero .tape.t1 {
-  top: 12%;
-  left: 18%;
-  transform: rotate(-18deg);
 }
 #hero .tape.t2 {
   top: 16%;

@@ -30,12 +30,16 @@ export default function Hero() {
   return (
     <section id="hero" aria-label="Introduction">
       <div className="crease" aria-hidden="true" />
-      <div className="tape ink t1" aria-hidden="true" />
       <div className="tape red t2" aria-hidden="true" />
       <div className="hero-photo">
-        <img src={heroPhoto} alt="Arpit lying back holding a green sneaker up to his face" />
+        <img
+          src={heroPhoto}
+          width="800"
+          height="800"
+          alt="Arpit lying back holding a green sneaker up to his face"
+        />
       </div>
-      <img className="hammock" src={hammock} alt="" aria-hidden="true" />
+      <img className="hammock" src={hammock} width="900" height="312" alt="" aria-hidden="true" />
       <p className="kicker">ARPIT LAKHANI'S</p>
       <h1 className="big" ref={headingRef}>
         <span>port</span>

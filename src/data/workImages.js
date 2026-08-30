@@ -7,15 +7,15 @@ import dieselImg from '../assets/diesel.jpg';
 import wholeTruthImg from '../assets/whole-truth.jpg';
 import doveImg from '../assets/dove.jpg';
 
-// Finished mockup per client. Keyed by client name so both the flip cards
-// and the case-study overlay resolve the same image.
+// Finished mockup per client, with intrinsic pixel dimensions so the overlay
+// image can carry width/height and reserve its space before it loads.
 export const workImages = {
-  'Liquid Death': liquidDeathImg,
-  Mailchimp: mailchimpImg,
-  Duolingo: duolingoImg,
-  'The Economist': economistImg,
-  'Mad Ad Woman': madAdWomanImg,
-  Diesel: dieselImg,
-  'The Whole Truth': wholeTruthImg,
-  Dove: doveImg,
+  'Liquid Death': { src: liquidDeathImg, w: 800, h: 772 },
+  Mailchimp: { src: mailchimpImg, w: 800, h: 1263 },
+  Duolingo: { src: duolingoImg, w: 900, h: 228 },
+  'The Economist': { src: economistImg, w: 900, h: 307 },
+  'Mad Ad Woman': { src: madAdWomanImg, w: 800, h: 1124 },
+  Diesel: { src: dieselImg, w: 800, h: 1351 },
+  'The Whole Truth': { src: wholeTruthImg, w: 800, h: 1446 },
+  Dove: { src: doveImg, w: 800, h: 1088 },
 };
