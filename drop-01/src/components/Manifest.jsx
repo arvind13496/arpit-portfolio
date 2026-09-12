@@ -40,13 +40,13 @@ export default function Manifest({ onOpen }) {
         <div className="col-span-12 flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
           <div>
             <h2 id="manifest-heading" className="head text-[clamp(32px,3.8vw,58px)]">
-              Manifest — 08 lots
+              The work — eight briefs
             </h2>
           </div>
         </div>
 
         <p className="col-span-12 bg-pink text-ink border border-ink p-5 md:p-7 head text-[clamp(20px,2.3vw,32px)]">
-          Cohort briefs. All eight were set by the Mad Ad Woman copywriting cohort; no client on this manifest commissioned the work.
+          Spec work, written to brief. All eight briefs were set by the Mad Ad Woman copywriting cohort — no client here commissioned the work.
         </p>
 
         <article className="col-span-12 border border-ink p-5 md:p-8 flex flex-col gap-6" data-cta={lead.cta}>

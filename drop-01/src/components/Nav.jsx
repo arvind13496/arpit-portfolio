@@ -4,13 +4,13 @@ import { DROP } from '../data/identity.js';
 
 export const CONTENTS = [
   ['cover', '00', 'Cover'],
-  ['statement', '01', 'Statement'],
-  ['manifest', '02', 'Manifest'],
-  ['kyc', '03', 'KYC'],
-  ['other-shoes', '04', 'Other shoes'],
-  ['rule', '05', 'Rule'],
-  ['custody', '06', 'Custody'],
-  ['sign-off', '07', 'Sign off'],
+  ['statement', '01', 'Profile'],
+  ['manifest', '02', 'Work'],
+  ['kyc', '03', 'Origin'],
+  ['other-shoes', '04', 'Other work'],
+  ['rule', '05', 'The rule'],
+  ['custody', '06', 'Sneakers'],
+  ['sign-off', '07', 'Contact'],
 ];
 
 // One row, 48px, at every width: the wordmark stays put and the contents strip

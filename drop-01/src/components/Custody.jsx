@@ -11,7 +11,7 @@ export default function Custody() {
         <div className="col-span-12 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 id="custody-heading" className="head text-[clamp(32px,3.8vw,58px)]">
-              Custody register
+              The rotation
             </h2>
           </div>
           <p className="label"><span className="mono-wide font-bold">{pad(CUSTODY.length)}</span> pairs in rotation</p>
