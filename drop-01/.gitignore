@@ -1,2 +1,6 @@
 node_modules
 dist
+
+# Held out of the public repo until the phone number on it is decided
+# (see docs/DROP-01-PROMPT.md §2.4). Remove this line to ship it.
+public/arpit-lakhani-cv.pdf
