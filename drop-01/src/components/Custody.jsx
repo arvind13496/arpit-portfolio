@@ -10,7 +10,6 @@ export default function Custody() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p><span className="runhead">06 / Custody</span></p>
             <h2 id="custody-heading" className="head text-[clamp(32px,3.8vw,58px)]">
               Custody register
             </h2>

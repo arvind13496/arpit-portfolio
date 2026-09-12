@@ -123,16 +123,6 @@
   .read p {
     line-height: 1.6;
   }
-  /* Running head: the section's place in the drop, as a black tab. */
-  .runhead {
-    display: inline-block;
-    background: var(--color-ink);
-    color: var(--color-paper);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.6rem;
-  }
   .mono-cond {
     font-stretch: 80%;
   }

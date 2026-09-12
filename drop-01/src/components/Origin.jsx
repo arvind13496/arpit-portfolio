@@ -8,7 +8,6 @@ export default function Origin() {
     <section id="kyc" aria-labelledby="kyc-heading" className="border-b-2 border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12">
-          <p><span className="runhead">03 / KYC</span></p>
           <h2 id="kyc-heading" className="head text-[clamp(32px,3.8vw,58px)]">
             This obsession started in {ORIGIN.year}
           </h2>

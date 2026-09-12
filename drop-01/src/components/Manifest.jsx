@@ -39,7 +39,6 @@ export default function Manifest({ onOpen }) {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-4 md:gap-6">
         <div className="col-span-12 flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
           <div>
-            <p><span className="runhead">02 / Manifest</span></p>
             <h2 id="manifest-heading" className="head text-[clamp(32px,3.8vw,58px)]">
               Manifest — 08 lots
             </h2>
