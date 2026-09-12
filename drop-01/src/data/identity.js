@@ -1,3 +1,5 @@
+import passport from '../assets/passport.webp';
+
 // Every fact here traces to the brief. The issue date is the drop's own
 // publication date, not a biography fact; it is the one value set by the build.
 export const DROP = { number: '01', issued: '2026-09-12' };
@@ -30,11 +32,11 @@ export const FILLS = {
   MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
-  PASSPORT_PHOTO: null, // the passport-size photo for the statement of account
 };
 
-// Set to { src, w, h } once the passport photo is in src/assets.
-export const PASSPORT = null;
+// The passport-size photo on the statement of account: a 3:4 crop of a
+// supplied photograph, served at 240x320 for an 84px box.
+export const PASSPORT = { src: passport, w: 240, h: 320 };
 
 // His thesis line, verbatim.
 export const RULE = {
