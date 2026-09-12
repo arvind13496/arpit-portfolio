@@ -1,0 +1,53 @@
+# The gate for copy edits. Runs on every pull request into main and on
+# every push to main, so a broken edit shows a red X before it is merged
+# rather than after. Both projects lint, build, and run their own
+# hard-rule script.
+name: Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  zine:
+    name: Zine — lint, build, hard rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: Lint, build and check the hard rules
+        run: bash scripts/check.sh
+
+  drop01:
+    name: DROP 01 — build, hard rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: drop-01/package-lock.json
+      - run: npm ci
+        working-directory: drop-01
+      - name: Build
+        run: npm run build
+        working-directory: drop-01
+      - name: Check the hard rules
+        run: bash scripts/check.sh
+        working-directory: drop-01
