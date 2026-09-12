@@ -5,21 +5,21 @@ import { CRAFTS } from '../data/crafts.js';
 export default function Crafts() {
   return (
     <section id="other-shoes" aria-labelledby="other-shoes-heading" className="border-b-4 border-ink">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-10 md:py-16 grid grid-cols-12 gap-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12">
-          <p className="label">Lot 04 / Other shoes</p>
-          <h2 id="other-shoes-heading" className="display text-[clamp(44px,7vw,120px)]">
+          <p><span className="runhead">Lot 04 / Other shoes</span></p>
+          <h2 id="other-shoes-heading" className="head text-[clamp(32px,3.8vw,58px)]">
             The other shoes
           </h2>
         </div>
 
         {CRAFTS.map((c) => (
-          <article key={c.id} className="col-span-12 md:col-span-6 grid grid-cols-1 sm:grid-cols-[minmax(120px,38%)_1fr] gap-5 border-4 border-ink p-4 md:p-5">
+          <article key={c.id} className="col-span-12 md:col-span-6 grid grid-cols-1 sm:grid-cols-[minmax(120px,38%)_1fr] gap-5 border-[3px] border-ink p-4 md:p-5">
             <div className="border-4 border-ink shadow-hard-8 self-start max-w-[260px] sm:max-w-none">
               <img src={c.poster.src} width={c.poster.w} height={c.poster.h} alt={c.poster.alt} loading="lazy" className="block w-full h-auto" />
             </div>
             <div className="flex flex-col gap-3 min-w-0">
-              <h3 className="display text-[clamp(28px,3.6vw,52px)]">{c.title}</h3>
+              <h3 className="head-sm text-[clamp(24px,2.4vw,34px)]">{c.title}</h3>
               <dl className="text-sm">
                 <div className="grid grid-cols-[8ch_1fr] gap-2 py-1.5 border-b-2 border-dotted border-ink">
                   <dt className="label mono-cond">What</dt>

@@ -18,10 +18,10 @@ function Absence() {
 export default function Custody({ selectedId, onSelect }) {
   return (
     <section id="custody" aria-labelledby="custody-heading" className="border-b-4 border-ink">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-10 md:py-16 grid grid-cols-12 gap-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-7">
-          <p className="label">Lot 06 / Custody</p>
-          <h2 id="custody-heading" className="display text-[clamp(44px,7vw,120px)]">
+          <p><span className="runhead">Lot 06 / Custody</span></p>
+          <h2 id="custody-heading" className="head text-[clamp(32px,3.8vw,58px)]">
             Custody register
           </h2>
         </div>
@@ -29,12 +29,12 @@ export default function Custody({ selectedId, onSelect }) {
           {[['Lots', pad(CUSTODY.length)], ['In custody', pad(inCustody)], ['Disposed', pad(disposed)]].map(([k, v], i) => (
             <div key={k} className={`p-3 ${i < 2 ? 'border-r-4 border-ink' : ''}`}>
               <dt className="label">{k}</dt>
-              <dd className="display text-4xl md:text-5xl">{v}</dd>
+              <dd className="head text-4xl md:text-5xl">{v}</dd>
             </div>
           ))}
         </dl>
 
-        <p className="col-span-12 max-w-[60ch]">
+        <p className="col-span-12 read max-w-[58ch]">
           Pick the pair you would walk a mile in. It goes into the subject line at the sign-off, so the mail arrives already knowing what you wanted to talk about.
         </p>
 
@@ -45,7 +45,7 @@ export default function Custody({ selectedId, onSelect }) {
             return (
               <li
                 key={p.id}
-                className={`col-span-12 sm:col-span-6 lg:col-span-4 border-4 border-ink p-4 flex flex-col gap-3 ${selected ? 'bg-ink text-lime' : 'bg-paper text-ink'}`}
+                className={`col-span-12 sm:col-span-6 lg:col-span-4 border-[3px] border-ink p-4 flex flex-col gap-3 ${selected ? 'bg-ink text-lime' : 'bg-paper text-ink'}`}
               >
                 <p className="label flex justify-between">
                   <span className="mono-wide">Lot {p.n}</span>
@@ -58,8 +58,8 @@ export default function Custody({ selectedId, onSelect }) {
                     <img src={p.image.src} width={p.image.w} height={p.image.h} alt={`${p.brand} ${p.model}`} loading="lazy" className="block w-full h-auto" />
                   </div>
                 )}
-                <h3 className="display text-[clamp(26px,3vw,40px)]">
-                  <span className="block text-base font-normal font-mono normal-case tracking-normal">{p.brand}</span>
+                <h3 className="head-sm text-[clamp(22px,2vw,30px)]">
+                  <span className="block label font-mono mb-1">{p.brand}</span>
                   {p.model}
                 </h3>
                 <p className="label mono-cond">{p.colourway || '— / —'}</p>

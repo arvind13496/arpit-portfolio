@@ -23,7 +23,7 @@ export default function Cover() {
             <span>Day</span>
             <span>Institutional</span>
           </p>
-          <p className="display text-[clamp(28px,4vw,56px)]">
+          <p className="head text-[clamp(26px,3.2vw,46px)]">
             {dayJob.role}
             <br />
             {dayJob.unit}
@@ -36,7 +36,7 @@ export default function Cover() {
             <span>Craft</span>
             <span>After hours</span>
           </p>
-          <ul className="display text-[clamp(28px,4vw,56px)]">
+          <ul className="head text-[clamp(26px,3.2vw,46px)]">
             {PERSON.craft.map((c) => (
               <li key={c}>{c}</li>
             ))}
@@ -44,7 +44,7 @@ export default function Cover() {
           <p className="mono-wide font-bold uppercase">Size {PERSON.size}</p>
         </div>
 
-        <p className="lede col-span-12 md:col-span-8 text-xl md:text-2xl mt-4">
+        <p className="read col-span-12 md:col-span-8 text-xl md:text-2xl mt-4">
           {PERSON.school} alumnus. Based in {PERSON.city}. Both columns are current.
         </p>
 

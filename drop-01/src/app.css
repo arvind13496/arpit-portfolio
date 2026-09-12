@@ -68,7 +68,10 @@
 }
 
 @layer components {
-  /* Display cut: heavy, condensed, at the top of the optical-size axis. */
+  /* Register 1 — the heavy condensed cut. Reserved for three things: the
+     name, the lead lot line, the rule. Tracking is negative only at the sizes
+     it was drawn for; below the md breakpoint it opens and the weight drops so
+     counters stay open. */
   .display {
     font-family: var(--font-display);
     font-weight: 800;
@@ -79,14 +82,54 @@
     line-height: 0.9;
     text-wrap: balance;
   }
-  /* Lede cut: same family at reading scale, a different optical size so the
-     letterforms genuinely change rather than scale. */
-  .lede {
+  @media (max-width: 767px) {
+    .display {
+      font-weight: 740;
+      letter-spacing: -0.012em;
+    }
+  }
+  /* Register 2 — headings and his lines, set as sentences. Mid width, mid
+     optical size, no negative tracking. */
+  .head {
     font-family: var(--font-display);
-    font-weight: 500;
-    font-stretch: 90%;
+    font-weight: 700;
+    font-stretch: 95%;
+    font-variation-settings: "opsz" 48;
+    letter-spacing: 0;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+  /* Register 3 — names and titles inside cards. */
+  .head-sm {
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-stretch: 100%;
     font-variation-settings: "opsz" 24;
-    line-height: 1.5;
+    letter-spacing: 0;
+    line-height: 1.08;
+  }
+  /* Reading cut — his copy and the long paragraphs. The mono keeps labels,
+     data, briefs and the statement. */
+  .read {
+    font-family: var(--font-display);
+    font-weight: 430;
+    font-stretch: 100%;
+    font-variation-settings: "opsz" 17;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .read p {
+    line-height: 1.6;
+  }
+  /* Running head: the section's place in the drop, as a black tab. */
+  .runhead {
+    display: inline-block;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.6rem;
   }
   .mono-cond {
     font-stretch: 80%;

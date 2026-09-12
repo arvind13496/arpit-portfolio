@@ -16,16 +16,16 @@ export default function SignOff({ walkPair }) {
 
   return (
     <section id="sign-off" aria-labelledby="sign-off-heading" className="border-b-4 border-ink">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-10 md:py-16 grid grid-cols-12 gap-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-7 flex flex-col gap-6">
-          <p className="label">Lot 07 / Sign off</p>
-          <h2 id="sign-off-heading" className="display text-[clamp(44px,7vw,120px)]">
+          <p><span className="runhead">Lot 07 / Sign off</span></p>
+          <h2 id="sign-off-heading" className="head text-[clamp(34px,4.8vw,74px)]">
             So if you’re interested in my work, <span className="text-blue">or just wanna talk sneakers…</span>
           </h2>
           <p className="label">
             Subject line, prefilled: <span className="normal-case font-bold">{subject}</span>
           </p>
-          <a href={mailto} className="press bg-lime text-ink border-4 border-ink display text-3xl md:text-4xl px-6 py-4 self-start inline-flex items-center gap-4">
+          <a href={mailto} className="press bg-lime text-ink border-4 border-ink head text-2xl md:text-3xl px-6 py-4 self-start inline-flex items-center gap-4">
             <Q>SEND</Q>
             <span className="sr-only">Send an email to Arpit</span>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">

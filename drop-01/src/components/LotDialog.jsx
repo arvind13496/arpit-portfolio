@@ -59,12 +59,12 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
             <p className="mt-1 max-w-[70ch]">{active.brief}</p>
           </div>
 
-          <h2 id="lot-heading" className="display text-[clamp(32px,5vw,72px)]">
+          <h2 id="lot-heading" className={active.lead ? "display text-[clamp(32px,5vw,72px)]" : "head text-[clamp(26px,3.4vw,48px)]"}>
             {active.line === null ? <span className="fill">[ FILL: MADADWOMAN_LINE ]</span> : active.line}
           </h2>
 
           {active.copy.length > 0 && (
-            <div className="flex flex-col gap-4 max-w-[68ch] text-[17px]">
+            <div className="read flex flex-col gap-4 max-w-[62ch]">
               {active.copy.map((p, k) => (
                 <p key={k}>{p}</p>
               ))}
@@ -73,7 +73,7 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
 
           <aside className="border-4 border-dashed border-ink p-4" aria-label="Self-critique">
             <p className="label">Self-critique · margin</p>
-            {active.critique ? <p className="mt-2 max-w-[60ch]">{active.critique}</p> : <p className="mt-2"><span className="fill">[ SELF-CRITIQUE PENDING ]</span></p>}
+            {active.critique ? <p className="read mt-2 max-w-[58ch]">{active.critique}</p> : <p className="mt-2"><span className="fill">[ SELF-CRITIQUE PENDING ]</span></p>}
           </aside>
         </div>
 
