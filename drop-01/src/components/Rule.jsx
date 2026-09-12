@@ -8,7 +8,7 @@ export default function Rule() {
         <p className="col-span-12"><span className="runhead">Lot 05 / The rule</span></p>
         <h2 id="rule-heading" className="sr-only">The rule</h2>
         <blockquote className="col-span-12 md:col-span-11">
-          <p className="display text-[clamp(34px,6.6vw,118px)]">{RULE.text}</p>
+          <p className="display tracking-[-0.008em] text-[clamp(34px,6.6vw,118px)]">{RULE.text}</p>
           <p className="mt-6 text-lg md:text-2xl">{RULE.aside}</p>
         </blockquote>
         <p className="col-span-12 mt-4">

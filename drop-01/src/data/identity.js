@@ -26,6 +26,7 @@ export const PERSON = {
 // Unsupplied facts, rendered as visible tokens. Keys are the <<FILL:...>> ids
 // from the brief; the build prints every one still outstanding at check time.
 export const FILLS = {
+  RESUME_URL: null, // the Google Drive link to the résumé
   MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
@@ -38,9 +39,9 @@ export const PASSPORT = { src: passport, w: 240, h: 320 };
 // The cover portrait: a 4:5 crop of the same photograph, served at 800x1000.
 export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monument at sunset, looking over his shoulder and smiling' };
 
-// The résumé, served from public/. The phone number it carries stays in the
-// PDF only; nothing on the page prints it.
-export const RESUME = { href: '/arpit-lakhani-cv.pdf', label: 'PDF, one page, 231KB' };
+// The résumé lives on Google Drive, not in this repository. Set the href
+// once the link exists; until then the statement prints a pending slot.
+export const RESUME = null; // { href: 'https://drive.google.com/...', label: 'Google Drive, one page' }
 
 // The statement of account: the headline facts from the résumé, set as
 // lines. Not everything — what a hiring marketer scans for.
@@ -55,6 +56,17 @@ export const STATEMENT = [
   ['Education', 'MBA, Sales & Marketing, SCMHRD, 2023 · BBA, IIPS Indore, 2021'],
   ['Certified', 'Lean Six Sigma Green Belt, KPMG, 2022'],
   ['Wins', 'IMT Marketing World Cup, 2022 · Peek-a-Sneak, sneaker marketing case, IMT · Pen-a-thought, SCMHRD'],
+];
+
+// The same receipt, off the books: the lines a résumé leaves out.
+export const OFF_THE_BOOKS = [
+  ['Size', 'UK 10'],
+  ['In rotation', '07 pairs'],
+  ['Account opened', '2016 · the OG AJ1 Bred'],
+  ['Band', 'BlackBook, lead vocalist'],
+  ['Foley', 'Tenet, the whole final sequence'],
+  ['Stage', 'Runner-up, Battle of Bands, SCIT Pune'],
+  ['Content', 'With a sneaker creator: ideation, trends, meetups'],
 ];
 
 // His thesis line, verbatim.

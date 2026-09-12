@@ -32,7 +32,7 @@ export default function SignOff() {
           </a>
         </div>
 
-        <dl className="col-span-12 md:col-span-5 border-t-[3px] border-ink self-start">
+        <dl className="col-span-12 md:col-span-7 border-t-[3px] border-ink self-start">
           <Row k="Mail"><a href={`mailto:${PERSON.email}`} className="underline underline-offset-4">{PERSON.email}</a></Row>
           <Row k="Instagram"><a href={PERSON.instagram.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{PERSON.instagram.handle}</a></Row>
           <Row k="LinkedIn"><a href={PERSON.linkedin.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{PERSON.linkedin.handle}</a></Row>

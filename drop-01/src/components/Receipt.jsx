@@ -1,4 +1,4 @@
-import { DROP, PERSON, PASSPORT, RESUME, STATEMENT } from '../data/identity.js';
+import { DROP, PERSON, PASSPORT, RESUME, STATEMENT, OFF_THE_BOOKS } from '../data/identity.js';
 
 // Career history as a statement of account: the headline facts from the
 // résumé print as lines, and the total counts them.
@@ -26,14 +26,14 @@ export default function Receipt() {
               {PERSON.first} runs products on the {dayJob.unit} desk at {dayJob.org}. After hours he writes — the eight briefs on the manifest, a foley reel, a studio session — and keeps seven pairs in rotation, all of them further down the page. {PERSON.school} alumnus, based in {PERSON.city}.
             </p>
             <p>
-              The statement holds the headline facts. The résumé has the rest, on one page.
+              The statement holds the headline facts, then the ones a résumé leaves out. The résumé itself is one page.
             </p>
           </div>
           {RESUME ? (
-            <a href={RESUME.href} download className="press-4 bg-ink text-paper label font-bold px-5 py-3 self-start inline-flex items-center gap-3">
-              Download the résumé
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v13m0 0l-5-5m5 5l5-5M4 21h16" stroke="currentColor" strokeWidth="3" strokeLinecap="square" /></svg>
-              <span className="sr-only">, {RESUME.label}</span>
+            <a href={RESUME.href} target="_blank" rel="noopener noreferrer" className="press-4 bg-ink text-paper label font-bold px-5 py-3 self-start inline-flex items-center gap-3">
+              Open the résumé
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5m0 0H8m11 0v11" stroke="currentColor" strokeWidth="3" strokeLinecap="square" /></svg>
+              <span className="sr-only">, {RESUME.label}, opens in a new tab</span>
             </a>
           ) : (
             <p className="self-start"><span className="fill">[ RÉSUMÉ PENDING ]</span></p>
@@ -68,9 +68,15 @@ export default function Receipt() {
                 <Line key={k} k={k}>{v}</Line>
               ))}
             </dl>
+            <p className="label mt-5 pt-3 border-t-2 border-dashed border-ink">Off the books</p>
+            <dl>
+              {OFF_THE_BOOKS.map(([k, v]) => (
+                <Line key={k} k={k}>{v}</Line>
+              ))}
+            </dl>
             <div className="mt-5 pt-4 border-t-[3px] border-dashed border-ink flex justify-between font-bold uppercase text-sm">
               <span>Entries</span>
-              <span className="mono-wide">{String(STATEMENT.length).padStart(2, '0')}</span>
+              <span className="mono-wide">{String(STATEMENT.length + OFF_THE_BOOKS.length).padStart(2, '0')}</span>
             </div>
             <div className="flex justify-between font-bold uppercase text-sm">
               <span>Source</span>
