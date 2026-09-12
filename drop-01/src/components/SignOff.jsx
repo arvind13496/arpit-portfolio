@@ -16,7 +16,7 @@ export default function SignOff() {
     <section id="sign-off" aria-labelledby="sign-off-heading" className="border-b-[3px] border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-7 flex flex-col gap-6">
-          <p><span className="runhead">Lot 07 / Sign off</span></p>
+          <p><span className="runhead">07 / Sign off</span></p>
           <h2 id="sign-off-heading" className="head text-[clamp(34px,4.8vw,74px)]">
             So if you’re interested in my work, <span className="text-blue">or just wanna talk sneakers…</span>
           </h2>

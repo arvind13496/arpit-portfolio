@@ -6,12 +6,12 @@ import { DROP, PERSON, PORTRAIT } from '../data/identity.js';
 export default function Cover() {
   const { dayJob } = PERSON;
   return (
-    <section id="cover" aria-labelledby="cover-heading" className="border-b-[3px] border-ink">
+    <section id="cover" aria-labelledby="cover-heading">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-8 md:py-12">
         <div className="border-[3px] border-ink bg-paper shadow-hard-14 md:grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <p className="label flex flex-wrap justify-between gap-x-6 px-4 py-2 border-b-[3px] border-ink md:col-span-2">
             <span><span className="mono-wide">DROP {DROP.number}</span> · Issued {DROP.issued}</span>
-            <span>Lot 00 / Cover · In custody</span>
+            <span>Lot 00 · The account holder · In custody</span>
           </p>
           <div className="bg-lime border-b-[3px] md:border-b-0 md:border-r-[3px] border-ink">
             <img src={PORTRAIT.src} width={PORTRAIT.w} height={PORTRAIT.h} alt={PORTRAIT.alt} className="block w-full h-full object-cover" fetchPriority="high" />

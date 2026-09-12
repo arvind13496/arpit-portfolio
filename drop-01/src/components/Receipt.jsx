@@ -17,7 +17,7 @@ export default function Receipt() {
     <section id="statement" aria-labelledby="statement-heading" className="border-b-[3px] border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
-          <p><span className="runhead">Lot 01 / Statement</span></p>
+          <p><span className="runhead">01 / Statement</span></p>
           <h2 id="statement-heading" className="head text-[clamp(32px,3.8vw,58px)]">
             Statement of account
           </h2>
@@ -69,20 +69,12 @@ export default function Receipt() {
               ))}
             </dl>
             <p className="label mt-5 pt-3 border-t-2 border-dashed border-ink">Off the books</p>
-            <dl>
+            <dl className="mb-1">
               {OFF_THE_BOOKS.map(([k, v]) => (
                 <Line key={k} k={k}>{v}</Line>
               ))}
             </dl>
-            <div className="mt-5 pt-4 border-t-[3px] border-dashed border-ink flex justify-between font-bold uppercase text-sm">
-              <span>Entries</span>
-              <span className="mono-wide">{String(STATEMENT.length + OFF_THE_BOOKS.length).padStart(2, '0')}</span>
-            </div>
-            <div className="flex justify-between font-bold uppercase text-sm">
-              <span>Source</span>
-              <span>Résumé, {DROP.issued.slice(0, 4)}</span>
-            </div>
-            <p className="label mt-4 mono-cond">No amounts fabricated · Keep for your records</p>
+            
           </div>
         </div>
       </div>
