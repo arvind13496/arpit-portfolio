@@ -14,21 +14,21 @@ export default function Cover() {
           <span>Lot 00 / Cover</span>
         </p>
 
-        <h1 id="cover-heading" className="display col-span-12 text-[clamp(72px,17vw,280px)]">
+        <h1 id="cover-heading" className="display col-span-12 text-[clamp(64px,14vw,230px)]">
           {PERSON.first}
           <br />
           {PERSON.last}
         </h1>
 
-        <div className="col-span-12 md:col-span-5 border-[3px] border-ink bg-paper shadow-hard-14">
-          <p className="label flex justify-between px-4 py-2 border-b-[3px] border-ink">
+        <div className="col-span-12 md:col-span-8 border-[3px] border-ink bg-paper shadow-hard-14 md:grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <p className="label flex justify-between px-4 py-2 border-b-[3px] border-ink md:col-span-2">
             <span className="mono-wide">Lot 00</span>
             <span>In custody</span>
           </p>
-          <div className="bg-lime border-b-[3px] border-ink">
-            <img src={PORTRAIT.src} width={PORTRAIT.w} height={PORTRAIT.h} alt={PORTRAIT.alt} className="block w-full h-auto" fetchPriority="high" />
+          <div className="bg-lime border-b-[3px] md:border-b-0 md:border-r-[3px] border-ink">
+            <img src={PORTRAIT.src} width={PORTRAIT.w} height={PORTRAIT.h} alt={PORTRAIT.alt} className="block w-full h-full object-cover" fetchPriority="high" />
           </div>
-          <div className="p-4 flex flex-col gap-2">
+          <div className="p-4 md:p-6 flex flex-col gap-2 md:justify-end">
             <p className="label">{PERSON.last}</p>
             <p className="head text-[clamp(30px,3.2vw,44px)]">{PERSON.first}</p>
             <p className="label mono-cond uppercase">{PERSON.craft.join(' / ')}</p>
@@ -43,8 +43,8 @@ export default function Cover() {
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-7 flex flex-col justify-between gap-8">
-          <p className="read text-xl md:text-2xl max-w-[34ch]">
+        <div className="col-span-12 md:col-span-4 flex flex-col justify-between gap-8">
+          <p className="read text-xl md:text-2xl max-w-[30ch]">
             {PERSON.craft[0]} after hours; product manager on the {dayJob.unit} desk at {dayJob.org} by day. The manifest below is the copy. The statement is the rest.
           </p>
           <a href="#statement" className="label flex items-center gap-3 self-start md:self-end">

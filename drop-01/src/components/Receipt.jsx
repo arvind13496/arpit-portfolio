@@ -6,7 +6,7 @@ function Line({ k, children }) {
   return (
     <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-1.5 border-b border-dotted border-rule items-baseline">
       <dt className="label mono-cond shrink-0">{k}</dt>
-      <dd className="text-right uppercase text-sm ml-auto max-w-[32ch]">{children}</dd>
+      <dd className="text-right uppercase text-sm ml-auto max-w-full md:max-w-[32ch]">{children}</dd>
     </div>
   );
 }

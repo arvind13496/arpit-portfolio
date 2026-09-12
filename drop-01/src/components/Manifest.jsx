@@ -64,8 +64,8 @@ export default function Manifest({ onOpen }) {
         {rest.map((lot, i) => (
           <article key={lot.slug} className={`col-span-12 ${SPANS[i]} border border-ink p-4 md:p-5 flex flex-col gap-4`} data-cta={lot.cta}>
             <Meta lot={lot} />
-            <div className="border border-ink bg-paper aspect-[4/3] overflow-hidden">
-              <img src={THUMBS[lot.slug]} width="400" height="300" alt="" aria-hidden="true" loading="lazy" className="block w-full h-full object-cover object-top" />
+            <div className="border border-ink bg-paper aspect-[3/2] overflow-hidden">
+              <img src={THUMBS[lot.slug]} width="960" height="640" alt="" aria-hidden="true" loading="lazy" className="block w-full h-full object-cover object-top" />
             </div>
             <LotLine lot={lot} className="head text-[clamp(22px,2.3vw,34px)] flex-1" />
             {lot.note && <p className="label">{lot.note}</p>}
