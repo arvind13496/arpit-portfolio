@@ -1,5 +1,5 @@
 import Fill from './Fill.jsx';
-import { DROP, PERSON, PASSPORT } from '../data/identity.js';
+import { DROP, PERSON, PASSPORT, RESUME } from '../data/identity.js';
 
 // Career history as a statement of account, printed on an empty till: the
 // four supplied facts print as lines, the four unsupplied ones print as
@@ -23,9 +23,23 @@ export default function Receipt() {
           <h2 id="statement-heading" className="head text-[clamp(32px,3.8vw,58px)]">
             Statement of account
           </h2>
-          <p className="read max-w-[58ch]">
-            Every line on this statement was supplied. Nothing was inferred, estimated or padded to look complete. The pending entries are pending because the account holder has not written them yet.
-          </p>
+          <div className="read max-w-[58ch] flex flex-col gap-4">
+            <p>
+              {PERSON.first} runs products on the {dayJob.unit} desk at {dayJob.org}. After hours he writes — the eight briefs on the manifest, a foley reel, a studio session — and keeps seven pairs in rotation, all of them further down the page. {PERSON.school} alumnus, based in {PERSON.city}.
+            </p>
+            <p>
+              The statement holds the headline facts. Dates and milestones land with the résumé; until then they print as pending rather than as guesses.
+            </p>
+          </div>
+          {RESUME ? (
+            <a href={RESUME.href} download className="press-4 bg-ink text-paper label font-bold px-5 py-3 self-start inline-flex items-center gap-3">
+              Download the résumé
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v13m0 0l-5-5m5 5l5-5M4 21h16" stroke="currentColor" strokeWidth="3" strokeLinecap="square" /></svg>
+              <span className="sr-only">, {RESUME.label}</span>
+            </a>
+          ) : (
+            <p className="self-start"><span className="fill">[ RÉSUMÉ PENDING ]</span></p>
+          )}
         </div>
 
         <div className="col-span-12 md:col-span-6 md:col-start-7">

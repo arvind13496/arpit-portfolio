@@ -1,4 +1,5 @@
 import passport from '../assets/passport.webp';
+import portrait from '../assets/portrait.webp';
 
 // Every fact here traces to the brief. The issue date is the drop's own
 // publication date, not a biography fact; it is the one value set by the build.
@@ -32,11 +33,19 @@ export const FILLS = {
   MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
+  RESUME_PDF: null, // the résumé, as a file in public/
 };
 
 // The passport-size photo on the statement of account: a 3:4 crop of a
 // supplied photograph, served at 240x320 for an 84px box.
 export const PASSPORT = { src: passport, w: 240, h: 320 };
+
+// The cover portrait: a 4:5 crop of the same photograph, served at 800x1000.
+export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monument at sunset, looking over his shoulder and smiling' };
+
+// Set to { href, label } once the résumé is in public/ — e.g.
+// { href: '/arpit-lakhani-resume.pdf', label: 'Résumé, PDF' }.
+export const RESUME = null;
 
 // His thesis line, verbatim.
 export const RULE = {
