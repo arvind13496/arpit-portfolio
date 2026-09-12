@@ -15,7 +15,7 @@ export default function Origin() {
         </div>
 
         <figure className="col-span-12 sm:col-span-6 md:col-span-3">
-          <div className="border-[3px] border-ink shadow-hard-8 bg-paper">
+          <div className="border-2 border-ink shadow-hard-8 bg-paper">
             <img src={aboutPhoto} width="460" height="480" alt="Arpit holding a green sneaker up to his face" loading="lazy" className="block w-full h-auto" />
           </div>
           <figcaption className="label mt-4">Photo ID · account holder</figcaption>

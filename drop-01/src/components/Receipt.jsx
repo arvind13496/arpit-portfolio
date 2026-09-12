@@ -41,8 +41,8 @@ export default function Receipt() {
         </div>
 
         <div className="col-span-12 md:col-span-6 md:col-start-7">
-          <div className="max-w-md bg-paper border-[3px] border-ink shadow-hard-8 p-5 md:p-6">
-            <div className="bg-blue text-paper -m-5 md:-m-6 mb-5 md:mb-6 p-4 border-b-[3px] border-ink">
+          <div className="max-w-md bg-paper border-2 border-ink shadow-hard-8 p-5 md:p-6">
+            <div className="bg-blue text-paper -m-5 md:-m-6 mb-5 md:mb-6 p-4 border-b-2 border-ink">
               <p className="label">Statement of account</p>
               <p className="head text-2xl">A. {PERSON.last}</p>
               <p className="label mt-1">Printed {DROP.issued}</p>

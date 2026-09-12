@@ -203,7 +203,7 @@
 
   .stamp {
     display: inline-block;
-    border: 3px solid currentColor;
+    border: 2px solid currentColor;
     padding: 0.15em 0.5em;
     letter-spacing: 0.1em;
     text-transform: uppercase;

@@ -44,10 +44,10 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-40 bg-paper border-b-[3px] border-ink h-12" aria-label="Contents">
       <div className="mx-auto max-w-[1440px] h-full flex items-stretch">
-        <a href="#cover" className="display text-2xl px-4 flex items-center border-r-[3px] border-ink shrink-0">
+        <a href="#cover" className="display text-2xl px-4 flex items-center border-r-2 border-ink shrink-0">
           DROP&nbsp;{DROP.number}
         </a>
-        <span className="label hidden md:flex items-center px-4 border-r-[3px] border-ink shrink-0">
+        <span className="label hidden md:flex items-center px-4 border-r-2 border-ink shrink-0">
           <Q>CONTENTS</Q>
           <span className="sr-only">Contents</span>
         </span>
