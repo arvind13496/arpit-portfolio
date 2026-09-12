@@ -2,26 +2,24 @@ import { DROP, PERSON } from '../data/identity.js';
 import { LOTS } from '../data/work.js';
 import { CUSTODY } from '../data/closet.js';
 
-// Streams only what is real: the drop, the lots, the custody count.
-const inCustody = CUSTODY.filter((p) => p.state === 'custody').length;
-const disposed = CUSTODY.length - inCustody;
+// Only what is real: the drop, who he is, the lots, the custody count.
 
 const ITEMS = [
   `DROP ${DROP.number}`,
-  `ISSUED ${DROP.issued}`,
+  PERSON.craft.map((c) => c.toUpperCase()).join(' · '),
   PERSON.name.toUpperCase(),
   PERSON.city.toUpperCase(),
-  'SELF-SET BRIEFS',
+  `ISSUED ${DROP.issued}`,
+  'COHORT BRIEFS · MAD AD WOMAN',
   ...LOTS.map((l) => `LOT ${l.lot} · ${l.client.toUpperCase()} · ${l.format.toUpperCase()}`),
-  `CUSTODY ${String(inCustody).padStart(2, '0')} PAIRS`,
-  `DISPOSED ${String(disposed).padStart(2, '0')}`,
+  `CUSTODY ${String(CUSTODY.length).padStart(2, '0')} PAIRS`,
 ];
 
 function Run({ hidden }) {
   return (
     <ul className="flex gap-0" aria-hidden={hidden || undefined}>
       {ITEMS.map((t, i) => (
-        <li key={i} className="label mono-cond whitespace-nowrap px-6 py-2 bg-ink border-r-2 border-lime">
+        <li key={i} className="label mono-cond whitespace-nowrap px-6 py-2 border-r border-ink">
           {t}
         </li>
       ))}
@@ -31,10 +29,9 @@ function Run({ hidden }) {
 
 export default function Ticker() {
   return (
-    <div className="ticker bg-ink text-lime overflow-hidden border-b-4 border-ink" aria-label="Drop manifest ticker">
+    <div className="ticker bg-paper text-ink overflow-x-auto border-b-[3px] border-ink" aria-label="Drop manifest">
       <div className="ticker-track">
         <Run />
-        <Run hidden />
       </div>
     </div>
   );

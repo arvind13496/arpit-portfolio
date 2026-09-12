@@ -30,7 +30,11 @@ export const FILLS = {
   MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
+  PASSPORT_PHOTO: null, // the passport-size photo for the statement of account
 };
+
+// Set to { src, w, h } once the passport photo is in src/assets.
+export const PASSPORT = null;
 
 // His thesis line, verbatim.
 export const RULE = {

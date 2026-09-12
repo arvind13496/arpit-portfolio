@@ -8,11 +8,12 @@
    ------------------------------------------------------------------------ */
 @theme {
   --color-*: initial;
-  --color-paper: #FFFFFF;
-  --color-ink: #000000;
-  --color-lime: #CCFF00;
-  --color-pink: #FF3B8B;
-  --color-blue: #1D3FD8;
+  --color-paper: #F2F3EC;
+  --color-ink: #15170F;
+  --color-rule: #8C8F82;
+  --color-lime: #BFE83A;
+  --color-pink: #F2568F;
+  --color-blue: #2447C9;
 
   --font-display: "Bricolage Grotesque", "Arial Narrow", Helvetica, sans-serif;
   --font-mono: "Martian Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -21,9 +22,9 @@
   /* Offset scale, by hierarchy: 4 for controls, 8 for objects, 14 for the
      one thing per view that sits highest. Zero blur, zero spread, always. */
   --shadow-*: initial;
-  --shadow-hard-4: 4px 4px 0 0 var(--color-ink);
-  --shadow-hard-8: 8px 8px 0 0 var(--color-ink);
-  --shadow-hard-14: 14px 14px 0 0 var(--color-ink);
+  --shadow-hard-4: 3px 3px 0 0 var(--color-ink);
+  --shadow-hard-8: 6px 6px 0 0 var(--color-ink);
+  --shadow-hard-14: 10px 10px 0 0 var(--color-ink);
 
   /* Zero radius throughout: the namespace is emptied so no corner utility
      exists to reach for. */
@@ -139,8 +140,7 @@
   }
   .label {
     font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 
   /* The press: the object translates toward its shadow while the shadow
@@ -153,12 +153,12 @@
   }
   .press:hover,
   .press:focus-visible {
-    translate: 4px 4px;
+    translate: 3px 3px;
     box-shadow: var(--shadow-hard-4);
   }
   .press:active,
   .press[aria-pressed="true"] {
-    translate: 8px 8px;
+    translate: 6px 6px;
     box-shadow: none;
   }
   .press-4 {
@@ -170,19 +170,19 @@
   .press-4:hover,
   .press-4:focus-visible,
   .press-4:active {
-    translate: 4px 4px;
+    translate: 3px 3px;
     box-shadow: none;
   }
 
   /* Unfinished-content token: never mistakable for shipped copy. */
   .fill {
     display: inline-block;
-    background: var(--color-ink);
-    color: var(--color-lime);
+    border: 2px dashed var(--color-ink);
+    color: var(--color-ink);
     font-family: var(--font-mono);
     font-stretch: 80%;
     font-size: 0.8em;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     padding: 0.1em 0.5em;
     vertical-align: baseline;
     overflow-wrap: anywhere;
@@ -191,7 +191,6 @@
   .ticker-track {
     display: flex;
     width: max-content;
-    animation: ticker 60s linear infinite;
   }
   .ticker:hover .ticker-track {
     animation-play-state: paused;
@@ -209,6 +208,30 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     rotate: -3deg;
+  }
+
+  /* The manifest cursor tag; the native cursor steps aside only where the tag rides. */
+  .tag-cursor {
+    display: inline-block;
+    background: var(--color-lime);
+    color: var(--color-ink);
+    border: 2px solid var(--color-ink);
+    box-shadow: var(--shadow-hard-4);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.6rem;
+    white-space: nowrap;
+    rotate: -4deg;
+    translate: 16px 16px;
+  }
+  @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .has-cursor [data-cta],
+    .has-cursor [data-cta] button {
+      cursor: none;
+    }
   }
 
   .sr-only {

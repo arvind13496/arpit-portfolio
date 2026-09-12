@@ -70,10 +70,11 @@ banking language.
 
 ### 2.3 The spec copy — eight pieces, verbatim
 
-All eight are **self-set briefs, not shipped client work.** Label them that way
-somewhere the visitor cannot miss it. No client listed here hired him.
+All eight are **cohort briefs, not shipped client work** — set by the Mad Ad
+Woman copywriting cohort. Label them that way somewhere the visitor cannot miss
+it. No client listed here hired him.
 
-Each piece has a format, a client, the brief he set himself, and his copy. Set
+Each piece has a format, a client, the brief the cohort set, and his copy. Set
 the copy as real selectable text at reading size. Never as an image.
 
 1. **Liquid Death** — 404 page.

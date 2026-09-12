@@ -7,8 +7,9 @@ import diesel from '../assets/diesel.webp';
 import wholeTruth from '../assets/whole-truth.webp';
 import dove from '../assets/dove.webp';
 
-// Eight self-set briefs. Nothing here was commissioned; the manifest says so
-// where it cannot be missed. `line` and `copy` are his words, verbatim.
+// Eight briefs from the Mad Ad Woman copywriting cohort. Nothing here was
+// commissioned by the client named; the manifest says so where it cannot be
+// missed. `cta` names what opening the lot shows. `line` and `copy` are his words, verbatim.
 // `line: null` means he has not written one — it renders as a FILL token.
 // `critique` is his to write and renders as a pending slot while empty.
 export const LOTS = [
@@ -17,6 +18,7 @@ export const LOTS = [
     slug: 'liquid-death',
     client: 'Liquid Death',
     format: '404 page',
+    cta: 'See the 404 page',
     brief: 'Make an error 404 page for Liquid Death.',
     line: 'THIS PAGE IS DEAD, BURIED.',
     copy: [
@@ -32,6 +34,7 @@ export const LOTS = [
     slug: 'mailchimp',
     client: 'Mailchimp',
     format: 'cold email',
+    cta: 'Read the email',
     brief: 'Write a cold email from Mailchimp to a D2C founder who runs everything on Instagram and has never sent a marketing email.',
     line: 'Put a foot into the doors of your customers’ inbox.',
     copy: [
@@ -45,6 +48,7 @@ export const LOTS = [
     slug: 'duolingo',
     client: 'Duolingo',
     format: 'metro-coach wrap',
+    cta: 'Read the wrap',
     brief: 'Write a full metro-coach wrap for Duolingo.',
     line: 'Jitni der scroll karne me waste kiya, utni der me French me ask out karna seekh jaate. Anyways, your loss.',
     copy: [
@@ -60,6 +64,7 @@ export const LOTS = [
     slug: 'the-economist',
     client: 'The Economist',
     format: 'billboard',
+    cta: 'See the billboard',
     brief: 'One line, on a flyover, read in 3 seconds at 60kmph. No subhead, no explanation.',
     line: 'Make them mean it when they say ‘great speaking with you.’',
     copy: [],
@@ -71,6 +76,7 @@ export const LOTS = [
     slug: 'mad-ad-woman',
     client: 'Mad Ad Woman',
     format: 'Instagram ad, long copy',
+    cta: 'Read the ad',
     brief: 'Write an ad to sell the ‘Mad Ad Woman’ copy batch. Find insights only someone who’s been through it could know, as a single story with long copy.',
     line: null,
     copy: [
@@ -86,6 +92,7 @@ export const LOTS = [
     slug: 'diesel',
     client: 'Diesel',
     format: 'cinema ad, 45–60s',
+    cta: 'See the storyboard',
     brief: 'Playing right before a Friday-night blockbuster. The crowd just paid ₹600 for popcorn — one gloriously dumb, joyful decision already made. Diesel celebrates brave-stupid over safe-smart. Reckless on purpose.',
     line: 'Be Bold. Be Stupid.',
     copy: [
@@ -99,6 +106,7 @@ export const LOTS = [
     slug: 'the-whole-truth',
     client: 'The Whole Truth',
     format: 'insert card',
+    cta: 'Read the card',
     brief: 'Write the little insert card inside someone’s first-ever Whole Truth order.',
     line: 'The Whole Truth is that this product is not the sweetest out there. And it’s certainly not the cheapest.',
     copy: [
@@ -112,6 +120,7 @@ export const LOTS = [
     slug: 'dove',
     client: 'Dove',
     format: 'long-copy magazine ad',
+    cta: 'Read the ad',
     brief: 'Write a long-copy magazine ad for Dove about real skin.',
     line: 'This is what your skin is supposed to look like.',
     copy: [

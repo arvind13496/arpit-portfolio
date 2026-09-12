@@ -11,17 +11,14 @@ import Rule from './components/Rule.jsx';
 import Custody from './components/Custody.jsx';
 import SignOff from './components/SignOff.jsx';
 import { LOTS, lotBySlug } from './data/work.js';
-import { custodyById } from './data/closet.js';
 import { DROP, PERSON } from './data/identity.js';
 
 const HASH = /^#lot\/(.+)$/;
 
 export default function App() {
   const [activeSlug, setActiveSlug] = useState(null);
-  const [walkId, setWalkId] = useState(null);
   const didPush = useRef(false);
   const active = activeSlug ? lotBySlug[activeSlug] : null;
-  const walkPair = walkId ? custodyById[walkId] : null;
 
   // The hash is the source of truth for the open lot: a shared link opens it,
   // the back button closes it.
@@ -76,8 +73,8 @@ export default function App() {
         <Origin />
         <Crafts />
         <Rule />
-        <Custody selectedId={walkId} onSelect={setWalkId} />
-        <SignOff walkPair={walkPair} />
+        <Custody />
+        <SignOff />
       </main>
       <footer className="label mx-auto max-w-[1440px] px-4 md:px-8 py-6 flex flex-wrap gap-x-6">
         <span>DROP {DROP.number}</span>
