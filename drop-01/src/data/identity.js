@@ -26,14 +26,9 @@ export const PERSON = {
 // Unsupplied facts, rendered as visible tokens. Keys are the <<FILL:...>> ids
 // from the brief; the build prints every one still outstanding at check time.
 export const FILLS = {
-  GIB_ROLE_DATES: null,
-  GIB_PRODUCT_SURFACE: null,
-  GIB_MILESTONES: null, // expect 3–5 entries when supplied
-  SCMHRD_DATES: null,
   MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
-  RESUME_PDF: null, // the résumé, as a file in public/
 };
 
 // The passport-size photo on the statement of account: a 3:4 crop of a
@@ -43,9 +38,24 @@ export const PASSPORT = { src: passport, w: 240, h: 320 };
 // The cover portrait: a 4:5 crop of the same photograph, served at 800x1000.
 export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monument at sunset, looking over his shoulder and smiling' };
 
-// Set to { href, label } once the résumé is in public/ — e.g.
-// { href: '/arpit-lakhani-resume.pdf', label: 'Résumé, PDF' }.
-export const RESUME = null;
+// The résumé, served from public/. The phone number it carries stays in the
+// PDF only; nothing on the page prints it.
+export const RESUME = { href: '/arpit-lakhani-cv.pdf', label: 'PDF, one page, 231KB' };
+
+// The statement of account: the headline facts from the résumé, set as
+// lines. Not everything — what a hiring marketer scans for.
+export const STATEMENT = [
+  ['Employer', 'ICICI Bank'],
+  ['Desk', 'Government & Institutional Banking'],
+  ['Role', 'Product Manager'],
+  ['Since', 'April 2023'],
+  ['Enhancements', '10+ BRDs from 100+ client feedback points'],
+  ['Onboarding', '9 new customers · 200+ client queries'],
+  ['Before', 'ICICI Bank, summer intern, 2022 · Tasva (ABFRL), marketing, 2022'],
+  ['Education', 'MBA, Sales & Marketing, SCMHRD, 2023 · BBA, IIPS Indore, 2021'],
+  ['Certified', 'Lean Six Sigma Green Belt, KPMG, 2022'],
+  ['Wins', 'IMT Marketing World Cup, 2022 · Peek-a-Sneak, sneaker marketing case, IMT · Pen-a-thought, SCMHRD'],
+];
 
 // His thesis line, verbatim.
 export const RULE = {

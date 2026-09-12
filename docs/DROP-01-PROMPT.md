@@ -54,10 +54,11 @@ sneaker/copy practice supplies the heat. The design system in §4 is that same
 collision, which is why it is mostly black, white and monospace with one
 violent accent.
 
-### 2.2 Banking career content — NOT SUPPLIED
+### 2.2 Banking career content
 
-No verified milestones, dates, product names, transaction volumes or outcomes
-exist for the ICICI GIB role. Render these as §2.5 tokens:
+Supplied since, from the résumé: see `STATEMENT` in `drop-01/src/data/identity.js`.
+The original instruction, kept for the record — with nothing supplied, render
+these as §2.5 tokens:
 
 - `<<FILL:GIB_ROLE_DATES>>`
 - `<<FILL:GIB_PRODUCT_SURFACE>>`

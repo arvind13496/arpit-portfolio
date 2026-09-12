@@ -16,7 +16,7 @@ export const CRAFTS = [
   {
     id: 'vocal',
     title: 'Vocalist',
-    what: 'Studio session.',
+    what: 'Lead vocalist of BlackBook. Played Suburban Commune’s Indie Flow 6.0; runner-up, Battle of Bands, SCIT Pune. This one is a studio session.',
     where: 'YouTube',
     href: 'https://youtu.be/m-SW2KQaQ1Y',
     runtimeFill: 'VOCAL_RUNTIME',

@@ -1,14 +1,12 @@
-import Fill from './Fill.jsx';
-import { DROP, PERSON, PASSPORT, RESUME } from '../data/identity.js';
+import { DROP, PERSON, PASSPORT, RESUME, STATEMENT } from '../data/identity.js';
 
-// Career history as a statement of account, printed on an empty till: the
-// four supplied facts print as lines, the four unsupplied ones print as
-// tokens, and the total counts them honestly.
-function Line({ k, children, pending }) {
+// Career history as a statement of account: the headline facts from the
+// résumé print as lines, and the total counts them.
+function Line({ k, children }) {
   return (
-    <div className={`flex justify-between gap-x-4 gap-y-1 py-1.5 border-b border-dotted border-rule ${pending ? 'flex-wrap items-baseline' : ''}`}>
+    <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-1.5 border-b border-dotted border-rule items-baseline">
       <dt className="label mono-cond shrink-0">{k}</dt>
-      <dd className="text-right uppercase text-sm ml-auto">{children}</dd>
+      <dd className="text-right uppercase text-sm ml-auto max-w-[32ch]">{children}</dd>
     </div>
   );
 }
@@ -28,7 +26,7 @@ export default function Receipt() {
               {PERSON.first} runs products on the {dayJob.unit} desk at {dayJob.org}. After hours he writes — the eight briefs on the manifest, a foley reel, a studio session — and keeps seven pairs in rotation, all of them further down the page. {PERSON.school} alumnus, based in {PERSON.city}.
             </p>
             <p>
-              The statement holds the headline facts. Dates and milestones land with the résumé; until then they print as pending rather than as guesses.
+              The statement holds the headline facts. The résumé has the rest, on one page.
             </p>
           </div>
           {RESUME ? (
@@ -66,22 +64,17 @@ export default function Receipt() {
               )}
             </div>
             <dl>
-              <Line k="Employer">{dayJob.org}</Line>
-              <Line k="Desk">{dayJob.unit}</Line>
-              <Line k="Role">{dayJob.role}</Line>
-              <Line k="Value dates" pending><Fill id="GIB_ROLE_DATES" /></Line>
-              <Line k="Product surface" pending><Fill id="GIB_PRODUCT_SURFACE" /></Line>
-              <Line k="Milestones" pending><Fill id="GIB_MILESTONES" /></Line>
-              <Line k="Education">{PERSON.school}</Line>
-              <Line k="Dates" pending><Fill id="SCMHRD_DATES" /></Line>
+              {STATEMENT.map(([k, v]) => (
+                <Line key={k} k={k}>{v}</Line>
+              ))}
             </dl>
             <div className="mt-5 pt-4 border-t-[3px] border-dashed border-ink flex justify-between font-bold uppercase text-sm">
-              <span>Verified entries</span>
-              <span className="mono-wide">04</span>
+              <span>Entries</span>
+              <span className="mono-wide">{String(STATEMENT.length).padStart(2, '0')}</span>
             </div>
             <div className="flex justify-between font-bold uppercase text-sm">
-              <span>Pending</span>
-              <span className="mono-wide">04</span>
+              <span>Source</span>
+              <span>Résumé, {DROP.issued.slice(0, 4)}</span>
             </div>
             <p className="label mt-4 mono-cond">No amounts fabricated · Keep for your records</p>
           </div>
