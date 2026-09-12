@@ -2,7 +2,8 @@
 #   /arpit-portfolio/          the zine
 #   /arpit-portfolio/drop-01/  the neo-brutalist DROP 01
 # Runs on pushes to main, or on demand from the Actions tab. Nothing is
-# published until one of those happens.
+# published until one of those happens, and Pages must be enabled for the
+# repository with "GitHub Actions" as the source.
 name: Pages
 
 on:
@@ -47,9 +48,11 @@ jobs:
         run: npx vite build --base=/arpit-portfolio/drop-01/ --outDir ../dist-site/drop-01 --emptyOutDir
         working-directory: drop-01
 
+      # Reads the repository's Pages configuration. It cannot create one:
+      # enabling Pages needs admin rights the Actions token never has, so
+      # Settings → Pages → Source must be set to "GitHub Actions" once, by
+      # the repository owner. Until then this step stops the run.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
