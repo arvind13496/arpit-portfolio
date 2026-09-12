@@ -5,7 +5,7 @@ import { ORIGIN } from '../data/identity.js';
 // set as fields. The form is rendered straight so the hijack is legible.
 export default function Origin() {
   return (
-    <section id="kyc" aria-labelledby="kyc-heading" className="border-b-[3px] border-ink">
+    <section id="kyc" aria-labelledby="kyc-heading" className="border-b-2 border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12">
           <p><span className="runhead">03 / KYC</span></p>
@@ -15,13 +15,13 @@ export default function Origin() {
         </div>
 
         <figure className="col-span-12 sm:col-span-6 md:col-span-3">
-          <div className="border-2 border-ink shadow-hard-8 bg-paper">
+          <div className="border border-ink shadow-hard-8 bg-paper">
             <img src={aboutPhoto} width="460" height="480" alt="Arpit holding a green sneaker up to his face" loading="lazy" className="block w-full h-auto" />
           </div>
           <figcaption className="label mt-4">Photo ID · account holder</figcaption>
         </figure>
 
-        <div className="col-span-12 sm:col-span-6 md:col-span-4 border-2 border-ink bg-paper self-start">
+        <div className="col-span-12 sm:col-span-6 md:col-span-4 border border-ink bg-paper self-start">
           <p className="label bg-ink text-paper px-4 py-2">Know your customer</p>
           <dl className="p-4 text-sm">
             {ORIGIN.kyc.map(([k, v]) => (
@@ -31,7 +31,7 @@ export default function Origin() {
               </div>
             ))}
           </dl>
-          <p className="label px-4 py-2 border-t-2 border-ink flex justify-between">
+          <p className="label px-4 py-2 border-t border-ink flex justify-between">
             <span>Status</span>
             <span className="bg-ink text-paper px-2 font-bold">Active</span>
           </p>

@@ -26,7 +26,6 @@ export const PERSON = {
 // Unsupplied facts, rendered as visible tokens. Keys are the <<FILL:...>> ids
 // from the brief; the build prints every one still outstanding at check time.
 export const FILLS = {
-  RESUME_URL: null, // the Google Drive link to the résumé
   MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
@@ -41,7 +40,7 @@ export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monum
 
 // The résumé lives on Google Drive, not in this repository. Set the href
 // once the link exists; until then the statement prints a pending slot.
-export const RESUME = null; // { href: 'https://drive.google.com/...', label: 'Google Drive, one page' }
+export const RESUME = { href: 'https://drive.google.com/file/d/1PvQKCqmV7eJAkoFI-A9_SZp6aEd74o16/view?usp=drivesdk', label: 'Google Drive, one page' };
 
 // The statement of account: seven lines. Each says something no other part
 // of the page says, in a form a hiring marketer scans. The rest is the résumé.

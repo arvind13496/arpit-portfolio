@@ -26,13 +26,13 @@ h2=$(grep -rnIE '\-\-shadow-hard-[0-9]+:' "$CSS" | grep -vE ':[[:space:]]*[0-9]+
 h3=$(grep -rnIE '\b(shadow-(sm|md|lg|xl|2xl|inner)|drop-shadow|text-shadow)\b' "$SRC")
 [ -z "$h$h2$h3" ] && pass "2  every shadow is hard (Npx Npx 0 0)" || { bad "2  blurred or untokened shadow"; hits "$h$h2$h3"; }
 
-# 2b — two stroke weights, one rule: 3px only on the page's own divisions
-# (<section>, <nav>, the ticker); every object edge is 2px; the only 1px edges
-# are dotted or dashed hairlines.
-h=$(grep -rnIE 'border(-[trbl])?-\[3px\]' "$SRC"/components | grep -vE '<section|<nav|className="ticker')
-h2=$(grep -rnIE '\bborder(-[trbl])?(-4|-\[[0-9]+px\])\b' "$SRC"/components | grep -vE '\[3px\]')
-h3=$(grep -rnIE '\bborder(-[trbl])?([[:space:]"`])' "$SRC"/components | grep -vE 'border-(dotted|dashed)')
-[ -z "$h$h2$h3" ] && pass "2b two stroke weights: 3px page divisions, 2px objects, 1px hairlines only dotted/dashed" || { bad "2b stroke weight drift"; hits "$h$h2$h3"; }
+# 2b — two stroke weights, one rule: 2px only on the page's own divisions
+# (<section>, <nav>, the ticker); every object edge is 1px. No 3px, 4px or
+# arbitrary-width borders anywhere.
+h=$(grep -rnIE '\bborder(-[trblxy])?-2\b' "$SRC"/components | grep -vE '<section|<nav|className="ticker')
+h2=$(grep -rnIE '\bborder(-[trblxy])?(-4|-\[[0-9]+px\])\b' "$SRC"/components)
+h3=$(grep -nE 'border:[[:space:]]*[2-9]px' "$CSS")
+[ -z "$h$h2$h3" ] && pass "2b two stroke weights: 2px page divisions, 1px objects" || { bad "2b stroke weight drift"; hits "$h$h2$h3"; }
 
 # 3 — no gradients.
 h=$(grep -rnIE 'bg-gradient|\b(from|via|to)-[a-z]|(linear|radial|conic)-gradient' "$SRC")

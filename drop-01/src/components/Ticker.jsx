@@ -19,7 +19,7 @@ function Run({ hidden }) {
   return (
     <ul className="flex gap-0" aria-hidden={hidden || undefined}>
       {ITEMS.map((t, i) => (
-        <li key={i} className="label mono-cond whitespace-nowrap px-6 py-2 border-r-2 border-ink">
+        <li key={i} className="label mono-cond whitespace-nowrap px-6 py-2 border-r border-ink">
           {t}
         </li>
       ))}
@@ -29,7 +29,7 @@ function Run({ hidden }) {
 
 export default function Ticker() {
   return (
-    <div className="ticker bg-paper text-ink overflow-x-auto border-b-[3px] border-ink" aria-label="Drop manifest">
+    <div className="ticker bg-paper text-ink overflow-x-auto border-b-2 border-ink" aria-label="Drop manifest">
       <div className="ticker-track">
         <Run />
       </div>

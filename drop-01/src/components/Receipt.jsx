@@ -14,7 +14,7 @@ function Line({ k, children }) {
 export default function Receipt() {
   const { dayJob } = PERSON;
   return (
-    <section id="statement" aria-labelledby="statement-heading" className="border-b-[3px] border-ink">
+    <section id="statement" aria-labelledby="statement-heading" className="border-b-2 border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
           <p><span className="runhead">01 / Statement</span></p>
@@ -41,8 +41,8 @@ export default function Receipt() {
         </div>
 
         <div className="col-span-12 md:col-span-6 md:col-start-7">
-          <div className="max-w-md bg-paper border-2 border-ink shadow-hard-8 p-5 md:p-6">
-            <div className="bg-blue text-paper -m-5 md:-m-6 mb-5 md:mb-6 p-4 border-b-2 border-ink">
+          <div className="max-w-md bg-paper border border-ink shadow-hard-8 p-5 md:p-6">
+            <div className="bg-blue text-paper -m-5 md:-m-6 mb-5 md:mb-6 p-4 border-b border-ink">
               <p className="label">Statement of account</p>
               <p className="head text-2xl">A. {PERSON.last}</p>
               <p className="label mt-1">Printed {DROP.issued}</p>
@@ -54,11 +54,11 @@ export default function Receipt() {
                 <span className="label">{PERSON.city}</span>
               </div>
               {PASSPORT ? (
-                <div className="w-[84px] border-2 border-ink shrink-0">
+                <div className="w-[84px] border border-ink shrink-0">
                   <img src={PASSPORT.src} width={PASSPORT.w} height={PASSPORT.h} alt={`Passport photo of ${PERSON.name}`} loading="lazy" className="block w-full h-auto" />
                 </div>
               ) : (
-                <div className="w-[84px] aspect-[3/4] border-2 border-dashed border-ink shrink-0 flex items-center justify-center text-center p-1">
+                <div className="w-[84px] aspect-[3/4] border border-dashed border-ink shrink-0 flex items-center justify-center text-center p-1">
                   <span className="label mono-cond">Photo pending</span>
                 </div>
               )}
@@ -68,7 +68,7 @@ export default function Receipt() {
                 <Line key={k} k={k}>{v}</Line>
               ))}
             </dl>
-            <p className="label mt-5 pt-3 border-t-2 border-dashed border-ink">Off the books</p>
+            <p className="label mt-5 pt-3 border-t border-dashed border-ink">Off the books</p>
             <dl className="mb-1">
               {OFF_THE_BOOKS.map(([k, v]) => (
                 <Line key={k} k={k}>{v}</Line>

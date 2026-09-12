@@ -38,15 +38,15 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
       onClose={onClose}
       onCancel={(e) => { e.preventDefault(); onClose(); }}
       aria-labelledby="lot-heading"
-      className="m-0 md:m-auto w-full max-w-none md:max-w-[1100px] h-full md:h-auto md:max-h-[92vh] bg-paper text-ink border-0 md:border-2 border-ink p-0 overflow-auto"
+      className="m-0 md:m-auto w-full max-w-none md:max-w-[1100px] h-full md:h-auto md:max-h-[92vh] bg-paper text-ink border-0 md:border border-ink p-0 overflow-auto"
     >
-      <div className="sticky top-0 bg-paper border-b-2 border-ink flex items-center justify-between gap-4 px-4 md:px-6 h-12">
+      <div className="sticky top-0 bg-paper border-b border-ink flex items-center justify-between gap-4 px-4 md:px-6 h-12">
         <p className="label flex gap-4">
           <span className="mono-wide">Lot {active.lot}</span>
           <span>{active.format}</span>
           <span>{active.client}</span>
         </p>
-        <button type="button" data-close onClick={onClose} className="label font-bold h-full px-3 border-l-2 border-ink -mr-4 md:-mr-6">
+        <button type="button" data-close onClick={onClose} className="label font-bold h-full px-3 border-l border-ink -mr-4 md:-mr-6">
           <Q>CLOSE</Q>
           <span className="sr-only">Close lot {active.lot}</span>
         </button>
@@ -54,7 +54,7 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
 
       <div className="grid grid-cols-12 gap-6 p-4 md:p-6">
         <div className="col-span-12 lg:col-span-7 flex flex-col gap-6">
-          <div className="border-2 border-ink p-4">
+          <div className="border border-ink p-4">
             <p className="label">Brief · Mad Ad Woman cohort</p>
             <p className="mt-1 max-w-[70ch]">{active.brief}</p>
           </div>
@@ -71,22 +71,22 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
             </div>
           )}
 
-          <aside className="border-2 border-dashed border-ink p-4" aria-label="Self-critique">
+          <aside className="border border-dashed border-ink p-4" aria-label="Self-critique">
             <p className="label">Self-critique · margin</p>
             {active.critique ? <p className="read mt-2 max-w-[58ch]">{active.critique}</p> : <p className="mt-2"><span className="fill">[ SELF-CRITIQUE PENDING ]</span></p>}
           </aside>
         </div>
 
         <figure className="col-span-12 lg:col-span-5">
-          <div className="border-2 border-ink shadow-hard-8">
+          <div className="border border-ink shadow-hard-8">
             <img src={active.mock.src} width={active.mock.w} height={active.mock.h} alt={active.mock.alt} loading="lazy" className="block w-full h-auto" />
           </div>
           <figcaption className="label mt-4">Mockup, {active.mock.w}×{active.mock.h}</figcaption>
         </figure>
       </div>
 
-      <div className="border-t-2 border-ink grid grid-cols-2">
-        <button type="button" onClick={() => onNavigate(prev.slug)} className="label font-bold p-4 text-left border-r-2 border-ink hover:bg-ink hover:text-lime focus-visible:bg-ink focus-visible:text-lime">
+      <div className="border-t border-ink grid grid-cols-2">
+        <button type="button" onClick={() => onNavigate(prev.slug)} className="label font-bold p-4 text-left border-r border-ink hover:bg-ink hover:text-lime focus-visible:bg-ink focus-visible:text-lime">
           ← Lot {prev.lot} · {prev.client}
         </button>
         <button type="button" onClick={() => onNavigate(next.slug)} className="label font-bold p-4 text-right hover:bg-ink hover:text-lime focus-visible:bg-ink focus-visible:text-lime">
