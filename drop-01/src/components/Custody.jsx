@@ -19,27 +19,36 @@ export default function Custody() {
         </div>
 
         <ol className="col-span-12 grid grid-cols-12 gap-4 md:gap-6">
-          {CUSTODY.map((p) => (
-            <li key={p.id} className={`col-span-12 sm:col-span-6 border border-ink p-4 flex flex-col gap-3 bg-paper text-ink ${p.n === '07' ? 'lg:col-span-8' : 'lg:col-span-4'}`}>
-              <p className="label flex justify-between">
+          {CUSTODY.map((p) => {
+            // Pair 07 carries the odd column out; it holds the same window as
+            // the rest and spends the extra width on the label, not on air.
+            const wide = p.n === '07';
+            return (
+            <li key={p.id} className={`col-span-12 sm:col-span-6 border border-ink shadow-hard-8 bg-paper text-ink flex flex-col ${wide ? 'lg:col-span-8' : 'lg:col-span-4'}`}>
+              <p className="label flex flex-wrap justify-between gap-x-4 bg-blue text-paper px-4 py-3 border-b border-ink">
                 <span className="mono-wide">Pair {p.n}</span>
                 <span>In rotation</span>
               </p>
-              <div className="bg-white aspect-[5/4] lg:aspect-auto lg:h-[300px] p-3 flex items-center justify-center overflow-hidden">
-                <img src={p.image.src} width={p.image.w} height={p.image.h} alt={`${p.brand} ${p.model}`} loading="lazy" className="block w-full h-full object-contain" />
+              <div className={`p-4 md:p-5 grow flex flex-col gap-3 ${wide ? 'lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center' : ''}`}>
+                <div className="bg-white aspect-[5/4] lg:aspect-auto lg:h-[210px] flex items-center justify-center overflow-hidden">
+                  <img src={p.image.src} width={p.image.w} height={p.image.h} alt={`${p.brand} ${p.model}`} loading="lazy" className="block h-full w-auto max-w-full object-contain" />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h3 className="head-sm text-[clamp(22px,2vw,30px)]">
+                    <span className="block label font-mono mb-1">{p.brand}</span>
+                    {p.model}
+                  </h3>
+                  <p className="label mono-cond uppercase">{p.colourway || '— / —'}</p>
+                  {!p.verified && (
+                    <p className="label">
+                      <span className="px-2 font-bold bg-pink text-ink">Name unverified</span>
+                    </p>
+                  )}
+                </div>
               </div>
-              <h3 className="head-sm text-[clamp(22px,2vw,30px)]">
-                <span className="block label font-mono mb-1">{p.brand}</span>
-                {p.model}
-              </h3>
-              <p className="label mono-cond uppercase">{p.colourway || '— / —'}</p>
-              {!p.verified && (
-                <p className="label">
-                  <span className="px-2 font-bold bg-pink text-ink">Name unverified</span>
-                </p>
-              )}
             </li>
-          ))}
+            );
+          })}
         </ol>
       </div>
     </section>
