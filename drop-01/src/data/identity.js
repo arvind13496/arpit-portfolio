@@ -43,29 +43,20 @@ export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monum
 // once the link exists; until then the statement prints a pending slot.
 export const RESUME = null; // { href: 'https://drive.google.com/...', label: 'Google Drive, one page' }
 
-// The statement of account: the headline facts from the résumé, set as
-// lines. Not everything — what a hiring marketer scans for.
+// The statement of account: seven lines. Each says something no other part
+// of the page says, in a form a hiring marketer scans. The rest is the résumé.
 export const STATEMENT = [
-  ['Employer', 'ICICI Bank'],
-  ['Desk', 'Government & Institutional Banking'],
-  ['Role', 'Product Manager'],
-  ['Since', 'April 2023'],
-  ['Enhancements', '10+ BRDs from 100+ client feedback points'],
-  ['Onboarding', '9 new customers · 200+ client queries'],
-  ['Before', 'ICICI Bank, summer intern, 2022 · Tasva (ABFRL), marketing, 2022'],
-  ['Education', 'MBA, Sales & Marketing, SCMHRD, 2023 · BBA, IIPS Indore, 2021'],
-  ['Certified', 'Lean Six Sigma Green Belt, KPMG, 2022'],
-  ['Wins', 'IMT Marketing World Cup, 2022 · Peek-a-Sneak, sneaker marketing case, IMT · Pen-a-thought, SCMHRD'],
+  ['Role', 'Product Manager, Government & Institutional Banking, ICICI Bank · since April 2023'],
+  ['Shipped', '10+ BRDs from 100+ client feedback points · 9 customers onboarded · 200+ queries'],
+  ['Education', 'MBA, Sales & Marketing, SCMHRD, 2023'],
+  ['Wins', 'IMT Marketing World Cup · Peek-a-Sneak · Pen-a-thought'],
 ];
 
-// The same receipt, off the books: the lines a résumé leaves out.
+// The same receipt, off the books: three lines a résumé leaves out and the
+// rest of the page does not already carry in this form.
 export const OFF_THE_BOOKS = [
-  ['Size', 'UK 10'],
-  ['In rotation', '07 pairs'],
   ['Account opened', '2016 · the OG AJ1 Bred'],
   ['Band', 'BlackBook, lead vocalist'],
-  ['Foley', 'Tenet, the whole final sequence'],
-  ['Stage', 'Runner-up, Battle of Bands, SCIT Pune'],
   ['Content', 'With a sneaker creator: ideation, trends, meetups'],
 ];
 
