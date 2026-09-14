@@ -12,7 +12,6 @@ function Line({ k, children }) {
 }
 
 export default function Receipt() {
-  const { dayJob } = PERSON;
   return (
     <section id="statement" aria-labelledby="statement-heading" className="border-b-2 border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
@@ -22,7 +21,7 @@ export default function Receipt() {
           </h2>
           <div className="read max-w-[58ch] flex flex-col gap-4">
             <p>
-              {PERSON.first} runs products on the {dayJob.unit} desk at {dayJob.org}. After hours he writes — the eight briefs on the manifest, a foley reel, a studio session — and keeps seven pairs in rotation, all of them further down the page. {PERSON.school} alumnus, based in {PERSON.city}.
+              {PERSON.first} is, summarised in one word, an enthusiast. The things he's enthusiastic about: sneakers, music, sound, copywriting, marketing and interesting products. Scroll down and you'll find traces of his work in each of them.
             </p>
             <p>
               The statement holds the headline facts, then the ones a résumé leaves out. The résumé itself is one page.

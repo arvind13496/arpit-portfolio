@@ -65,7 +65,7 @@ export const LOTS = [
     client: 'The Economist',
     format: 'billboard',
     cta: 'See the billboard',
-    brief: 'One line, on a flyover, read in 3 seconds at 60kmph. No subhead, no explanation.',
+    brief: 'Write a hoarding for The Economist. One line, on a flyover, read in 3 seconds at 60kmph. No subhead, no explanation.',
     line: 'Make them mean it when they say ‘great speaking with you.’',
     copy: [],
     mock: { src: economist, w: 900, h: 307, alt: 'The Economist billboard mockup' },
@@ -93,7 +93,7 @@ export const LOTS = [
     client: 'Diesel',
     format: 'cinema ad, 45–60s',
     cta: 'See the storyboard',
-    brief: 'Playing right before a Friday-night blockbuster. The crowd just paid ₹600 for popcorn — one gloriously dumb, joyful decision already made. Diesel celebrates brave-stupid over safe-smart. Reckless on purpose.',
+    brief: 'Write a 45–60 second cinema ad for Diesel, playing right before a Friday-night blockbuster. The crowd just paid ₹600 for popcorn — they already made one gloriously dumb, joyful decision. Use it. Diesel celebrates the brave-stupid over the safe-smart.',
     line: 'Be Bold. Be Stupid.',
     copy: [
       '5-panel storyboard — BMX ride through the city → denim & bike detail → skateboard jump → campus walk → rock concert finale.',
@@ -133,3 +133,13 @@ export const LOTS = [
 ];
 
 export const lotBySlug = Object.fromEntries(LOTS.map((l) => [l.slug, l]));
+
+// Real work, not a cohort brief: sits after the eight lots on the manifest,
+// labelled apart from the spec work above it.
+export const REAL_WORK = {
+  title: 'Sneaker Social 3, with Smartkicks Official',
+  event: 'Sneaker Social 3',
+  partner: 'Smartkicks Official',
+  what: 'Worked with sneaker content creator @smartkicksofficial in organising his flagship sneaker-head meet-up.',
+  functions: 'Venue curation and partnerships, in-event management, social media content strategy, volunteer management, and everything under the sun.',
+};

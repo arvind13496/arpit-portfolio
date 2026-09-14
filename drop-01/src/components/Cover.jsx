@@ -22,12 +22,8 @@ export default function Cover() {
               <br />
               {PERSON.last}
             </h1>
-            <p className="label mono-cond uppercase">{PERSON.craft.join(' / ')}</p>
-            <p className="label mono-cond uppercase">
-              <span className="bg-blue text-paper px-1.5 py-0.5 box-decoration-clone">{dayJob.role} / {dayJob.unit} / {dayJob.org}</span>
-            </p>
             <p className="read text-lg md:text-xl max-w-[40ch]">
-              {PERSON.craft[0]} after hours; product manager on the {dayJob.unit} desk at {dayJob.org} by day. The manifest below is the copy. The statement is the rest.
+              {PERSON.craft[0]} after hours; product manager on the {dayJob.unit} desk at {dayJob.org} by day.
             </p>
             <div className="mt-auto pt-4 border-t border-ink flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
               <p className="label flex flex-wrap gap-x-6">

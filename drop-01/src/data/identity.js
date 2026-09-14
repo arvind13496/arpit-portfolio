@@ -42,21 +42,19 @@ export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monum
 // once the link exists; until then the statement prints a pending slot.
 export const RESUME = { href: 'https://drive.google.com/file/d/1PvQKCqmV7eJAkoFI-A9_SZp6aEd74o16/view?usp=drivesdk', label: 'Google Drive, one page' };
 
-// The statement of account: seven lines. Each says something no other part
-// of the page says, in a form a hiring marketer scans. The rest is the résumé.
+// The statement of account: the headline facts, in a form a hiring
+// marketer scans. The rest is the résumé.
 export const STATEMENT = [
-  ['Role', 'Product Manager, Government & Institutional Banking, ICICI Bank · since April 2023'],
-  ['Shipped', '10+ BRDs from 100+ client feedback points · 9 customers onboarded · 200+ queries'],
-  ['Education', 'MBA, Sales & Marketing, SCMHRD, 2023'],
-  ['Wins', 'IMT Marketing World Cup · Peek-a-Sneak · Pen-a-thought'],
+  ['Education', 'MBA, Sales & Marketing, SCMHRD, 2023 · BBA, Management Science, 2021 · Copywriting Batch, Mad Ad Woman, June 2026'],
+  ['Wins', 'IMT Marketing World Cup · Peek-a-Sneak · SIBM The Ultimate CEO · Battle of Bands · Pen-a-thought'],
 ];
 
-// The same receipt, off the books: three lines a résumé leaves out and the
-// rest of the page does not already carry in this form.
+// The same receipt, off the books: what a résumé leaves out and the rest
+// of the page does not already carry in this form.
 export const OFF_THE_BOOKS = [
-  ['Account opened', '2016 · the OG AJ1 Bred'],
-  ['Band', 'BlackBook, lead vocalist'],
-  ['Content', 'With a sneaker creator: ideation, trends, meetups'],
+  ['Customer of', 'Nike, Adidas, Puma, echos above, Comet'],
+  ['Gigs', 'BlackBook’s performance at The Bar Sheriff, Dombivli'],
+  ['Skills', 'Content ideation · Copywriting · Live performance · Venue curation · Logistics management · Campaign curation · and more'],
 ];
 
 // His thesis line, verbatim.
@@ -65,19 +63,21 @@ export const RULE = {
   aside: '(UK 10 if you’re wondering)',
 };
 
-// The 2016 origin, verbatim in substance. The KYC fields below are the same
+// The 2016 origin, verbatim in substance and now in third person to match
+// the voice everywhere else on the page. The KYC fields below are the same
 // facts re-set as a form, which is the whole 3% move.
 export const ORIGIN = {
   year: '2016',
   paragraphs: [
-    'My brother made my Instagram account and showed me the page of “Sneakers N Stuff” — a Sweden-based sneaker store. They’d just posted the return of the OG AJ1 Bred.',
-    'Sneakers have inspired me to create stuff — ad campaigns, cold emails, metro wraps, even foley sound design. Turns out chasing a good drop and chasing a good headline take the same kind of obsessive brain.',
+    'His brother made his Instagram account and showed him the page of “Sneakers N Stuff” — a Sweden-based sneaker store. They’d just posted the return of the OG AJ1 Bred.',
+    'Sneakers have inspired him to create stuff — ad campaigns, cold emails, metro wraps, even foley sound design. Turns out chasing a good drop and chasing a good headline take the same kind of obsessive brain.',
   ],
   kyc: [
-    ['Account opened', '2016'],
+    ['Taste Acquired', '2016'],
     ['Introduced by', 'Brother'],
     ['Channel', 'Instagram'],
-    ['Counterparty', 'Sneakers N Stuff, Sweden'],
-    ['Instrument', 'OG AJ1 Bred (return)'],
+    ['Source', 'Sneakers N Stuff, Sweden'],
+    ['Favourite', 'OG AJ1 Bred (return)'],
   ],
+  status: 'Obsessed',
 };
