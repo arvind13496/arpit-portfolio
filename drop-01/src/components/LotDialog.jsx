@@ -56,7 +56,7 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
       <div className="p-4 md:p-6">
         <figure>
           <div className="border border-ink shadow-hard-8 bg-paper flex items-center justify-center">
-            <img src={active.mock.src} width={active.mock.w} height={active.mock.h} alt={active.mock.alt} loading="lazy" className="block w-full h-auto max-h-[80vh] object-contain" />
+            <img src={active.mock.src} width={active.mock.w} height={active.mock.h} alt={active.mock.alt} loading="lazy" className="block w-full h-auto" />
           </div>
         </figure>
       </div>

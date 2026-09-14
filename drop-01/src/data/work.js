@@ -98,7 +98,7 @@ export const LOTS = [
     copy: [
       '5-panel storyboard — BMX ride through the city → denim & bike detail → skateboard jump → campus walk → rock concert finale.',
     ],
-    mock: { src: diesel, w: 800, h: 1351, alt: 'Diesel cinema ad five-panel storyboard' },
+    mock: { src: diesel, w: 1200, h: 4977, alt: 'Diesel storyboard, 18 panels: a denim-loving free spirit trades his identity for a formal corporate job, finds it hollow, and reclaims his authentic self by resigning and riding off in denim again' },
     critique: '',
   },
   {
