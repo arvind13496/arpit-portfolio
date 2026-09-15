@@ -58,6 +58,16 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
           <div className="border border-ink shadow-hard-8 bg-paper flex items-center justify-center">
             <img src={active.mock.src} width={active.mock.w} height={active.mock.h} alt={active.mock.alt} loading="lazy" className="block w-full h-auto" />
           </div>
+          {/* The mockup is the work, so it carries the design on its own. But the
+              words inside it are his, and words that exist only as pixels are
+              unreadable to a screen reader and unfindable by search. The copy
+              rides along here, announced and searchable, shown to no one. */}
+          <figcaption className="sr-only">
+            {active.line && <span>{active.line} </span>}
+            {active.copy.map((c, k) => (
+              <span key={k}>{c} </span>
+            ))}
+          </figcaption>
         </figure>
       </div>
 
