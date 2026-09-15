@@ -26,7 +26,6 @@ export const PERSON = {
 // Unsupplied facts, rendered as visible tokens. Keys are the <<FILL:...>> ids
 // from the brief; the build prints every one still outstanding at check time.
 export const FILLS = {
-  MADADWOMAN_LINE: null,
   FOLEY_RUNTIME: null,
   VOCAL_RUNTIME: null,
 };
