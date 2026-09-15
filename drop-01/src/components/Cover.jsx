@@ -17,15 +17,20 @@ export default function Cover() {
             <img src={PORTRAIT.src} width={PORTRAIT.w} height={PORTRAIT.h} alt={PORTRAIT.alt} className="block w-full h-full object-cover" fetchPriority="high" />
           </div>
           <div className="p-5 md:p-8 flex flex-col gap-4 md:gap-5">
-            <h1 id="cover-heading" className="display text-[clamp(56px,8.5vw,150px)]">
-              {PERSON.first}
-              <br />
-              {PERSON.last}
-            </h1>
-            <p className="read text-lg md:text-xl max-w-[40ch]">
-              {PERSON.craft[0]} after hours; product manager on the {dayJob.unit} desk at {dayJob.org} by day.
-            </p>
-            <div className="mt-auto pt-4 border-t border-ink flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+            {/* The portrait sets this crate's full height, so the name and lede
+                get my-auto and ride the middle of the leftover space. Pinned to
+                the top they left a slab of bare paper above the footer rule. */}
+            <div className="flex flex-col gap-4 md:gap-5 md:my-auto">
+              <h1 id="cover-heading" className="display text-[clamp(56px,8.5vw,150px)]">
+                {PERSON.first}
+                <br />
+                {PERSON.last}
+              </h1>
+              <p className="read text-lg md:text-xl max-w-[40ch]">
+                {PERSON.craft[0]} after hours; product manager on the {dayJob.unit} desk at {dayJob.org} by day.
+              </p>
+            </div>
+            <div className="mt-auto md:mt-0 pt-4 border-t border-ink flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
               <p className="label flex flex-wrap gap-x-6">
                 <span>Size {PERSON.size}</span>
                 <span>{PERSON.city}</span>

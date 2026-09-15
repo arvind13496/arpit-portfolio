@@ -31,7 +31,10 @@ export default function SignOff() {
           </a>
         </div>
 
-        <dl className="col-span-12 md:col-span-7 border-t border-ink self-start">
+        {/* Both blocks were col-span-7, so the second wrapped to its own row and
+            left two-fifths of the last fold on the page as bare paper. Five
+            columns starting at 8 closes the row out. */}
+        <dl className="col-span-12 md:col-span-5 md:col-start-8 border-t border-ink self-start">
           <Row k="Mail"><a href={`mailto:${PERSON.email}`} className="underline underline-offset-4">{PERSON.email}</a></Row>
           <Row k="Instagram"><a href={PERSON.instagram.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{PERSON.instagram.handle}</a></Row>
           <Row k="LinkedIn"><a href={PERSON.linkedin.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{PERSON.linkedin.handle}</a></Row>

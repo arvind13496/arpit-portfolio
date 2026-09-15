@@ -33,6 +33,15 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
   const prev = lots[(i - 1 + lots.length) % lots.length];
   const next = lots[(i + 1) % lots.length];
 
+  // A fixed 1200px panel left the narrow pieces — a phone screenshot, an email
+  // — marooned in the middle of it with 200px of bare paper either side. The
+  // panel takes its width from the work instead: the widest image it has to
+  // show, plus the padding, never more than 1200.
+  const widest = active.layout === 'pair'
+    ? active.mocks.reduce((sum, m) => sum + m.w, 0) + 24
+    : Math.max(...active.mocks.map((m) => m.w));
+  const panel = Math.min(1200, widest + 50);
+
   // The UA stylesheet pins a modal dialog at both top:0 and bottom:0, so
   // h-auto stretches to the viewport and a short lot sits above a slab of dead
   // paper. Releasing the bottom edge lets the panel hug its content; top-1/2
@@ -43,7 +52,8 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
       onClose={onClose}
       onCancel={(e) => { e.preventDefault(); onClose(); }}
       aria-labelledby="lot-heading"
-      className="m-0 md:mx-auto md:my-0 md:top-1/2 md:bottom-auto md:-translate-y-1/2 w-full max-w-none md:max-w-[1200px] h-full md:h-auto md:max-h-[92vh] bg-paper text-ink border-0 md:border border-ink p-0 overflow-auto"
+      style={{ maxWidth: panel }}
+      className="m-0 md:mx-auto md:my-0 md:top-1/2 md:bottom-auto md:-translate-y-1/2 w-full h-full md:h-auto md:max-h-[92vh] bg-paper text-ink border-0 md:border border-ink p-0 overflow-auto"
     >
       <div className="sticky top-0 bg-paper border-b border-ink flex items-center justify-between gap-4 px-4 md:px-6 h-12">
         <p id="lot-heading" className="label flex gap-4">
