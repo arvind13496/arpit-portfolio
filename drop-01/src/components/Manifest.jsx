@@ -4,12 +4,14 @@ import { THUMBS } from '../data/thumbs.js';
 // Lots 02–08 fill complete rows on the 12-column grid: 6+6, 4+4+4, 6+6.
 const SPANS = ['md:col-span-6', 'md:col-span-6', 'md:col-span-4', 'md:col-span-4', 'md:col-span-4', 'md:col-span-6', 'md:col-span-6'];
 
+// Brand and format only — the lot number was noise above a card whose slug
+// and thumbnail already say which piece it is, and every lot number still
+// lives inside the dialog these cards open.
 function Meta({ lot }) {
   return (
     <p className="label flex flex-wrap gap-x-4">
-      <span className="mono-wide">Lot {lot.lot}</span>
+      <span className="mono-wide">{lot.client}</span>
       <span>{lot.format}</span>
-      <span>{lot.client}</span>
     </p>
   );
 }
