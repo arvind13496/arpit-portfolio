@@ -30,9 +30,14 @@ export default function Cover() {
   return (
     <section id="cover" aria-labelledby="cover-heading">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-8 md:py-12">
-        <div className="border border-ink bg-paper shadow-hard-14 md:grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          {/* The lid band: what a box says before you open it. */}
-          <div className="md:col-span-2 border-b border-ink flex flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-2">
+        {/* The lid is a separate piece sitting on the box, not a header bar on
+            a panel. Two things make it read that way: it overhangs the body on
+            both sides, and it has a front wall under its printed face — the
+            bit you grip to lift it off. It keeps a tight shadow because it is
+            a few millimetres above what it covers, and z-10 so the body below
+            cannot paint over that shadow. */}
+        <div className="relative z-10 -mx-2 md:-mx-3 border border-ink bg-paper shadow-hard-4">
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 md:px-6 py-2.5">
             <p className="label flex flex-wrap items-center gap-x-4">
               <span className="mono-wide font-bold">DROP {DROP.number}</span>
               <span>Issued {DROP.issued}</span>
@@ -42,7 +47,10 @@ export default function Cover() {
               <span>Lot 00 · The account holder</span>
             </p>
           </div>
+          <div className="h-2.5 bg-ink border-t border-ink" />
+        </div>
 
+        <div className="border border-ink border-t-0 bg-paper shadow-hard-14 md:grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           {/* The product shot, and the one photograph on the page in full colour. */}
           <div className="bg-lime border-b md:border-b-0 md:border-r border-ink">
             <img src={PORTRAIT.src} width={PORTRAIT.w} height={PORTRAIT.h} alt={PORTRAIT.alt} className="block w-full h-full object-cover" fetchPriority="high" />
