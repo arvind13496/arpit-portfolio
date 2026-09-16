@@ -43,8 +43,14 @@ export default function Custody() {
                 Pair {p.n}
               </p>
               <div className="p-2.5 grow flex flex-col gap-2">
-                <div className="bg-white aspect-[5/4] lg:aspect-auto lg:h-[104px] flex items-center justify-center overflow-hidden">
-                  <img src={p.image.src} width={p.image.w} height={p.image.h} alt={`${p.brand} ${p.model}`} loading="lazy" className="block h-full w-auto max-w-full object-contain" />
+                {/* Padding lives on the window, not the image: h-full/w-auto
+                    let a wide shoe touch or spill past the window's own
+                    edges under overflow-hidden, which crops it. w-full/h-full
+                    object-contain inside a padded box means the image can
+                    only ever shrink to fit — never crop — and the padding is
+                    what gives every pair the same margin of white around it. */}
+                <div className="bg-white aspect-[5/4] lg:aspect-auto lg:h-[104px] p-3 flex items-center justify-center overflow-hidden">
+                  <img src={p.image.src} width={p.image.w} height={p.image.h} alt={`${p.brand} ${p.model}`} loading="lazy" className="block w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <h3 className="head-sm text-[clamp(14px,1.15vw,17px)]">
