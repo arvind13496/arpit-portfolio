@@ -24,7 +24,7 @@ export default function Custody() {
               the odd one out read as a mistake. Every crate is identical now
               and the short final row reads as what it is: seven pairs. */}
           {CUSTODY.map((p) => (
-            <li key={p.id} className="col-span-12 sm:col-span-6 lg:col-span-4 border border-ink shadow-hard-8 bg-paper text-ink flex flex-col">
+            <li key={p.id} className="col-span-12 sm:col-span-6 lg:col-span-4 border border-ink bg-paper text-ink flex flex-col">
               <p className="label flex flex-wrap justify-between gap-x-4 bg-blue text-paper px-4 py-3 border-b border-ink">
                 <span className="mono-wide">Pair {p.n}</span>
                 <span>In rotation</span>

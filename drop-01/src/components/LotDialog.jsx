@@ -86,7 +86,7 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
             pixel width so nothing is ever upscaled past its source. */}
         <figure className={active.layout === 'pair' ? 'grid gap-4 md:gap-6 md:grid-cols-2 md:items-start' : 'flex flex-col gap-4 md:gap-6'}>
           {active.mocks.map((m, k) => (
-            <div key={k} className="border border-ink shadow-hard-8 bg-paper mx-auto w-full" style={{ maxWidth: m.w }}>
+            <div key={k} className="border border-ink bg-paper mx-auto w-full" style={{ maxWidth: m.w }}>
               <img src={m.src} width={m.w} height={m.h} alt={m.alt} loading="lazy" className="block w-full h-auto" />
             </div>
           ))}

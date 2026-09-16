@@ -14,7 +14,7 @@ export default function Crafts() {
 
         {CRAFTS.map((c) => (
           <article key={c.id} className="col-span-12 md:col-span-6 grid grid-cols-1 sm:grid-cols-[minmax(120px,38%)_1fr] gap-5 border border-ink p-4 md:p-5">
-            <div className="border border-ink shadow-hard-8 self-start max-w-[260px] sm:max-w-none">
+            <div className="border border-ink self-start max-w-[260px] sm:max-w-none">
               <img src={c.poster.src} width={c.poster.w} height={c.poster.h} alt={c.poster.alt} loading="lazy" className="block w-full h-auto" />
             </div>
             <div className="flex flex-col gap-3 min-w-0">

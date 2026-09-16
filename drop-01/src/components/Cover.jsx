@@ -27,7 +27,7 @@ export default function Cover() {
   return (
     <section id="cover" aria-labelledby="cover-heading">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-8 md:py-12">
-        <div className="border border-ink bg-paper shadow-hard-8">
+        <div className="border border-ink bg-paper">
           {/* The brand band across the top of the label, printed as a solid
               black bar the way a box label's header is. min-h rather than
               padding so the depth is a stated measure, not a by-product of the
@@ -48,10 +48,8 @@ export default function Cover() {
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,18ch)_minmax(0,200px)]">
             <div className="p-5 md:p-8 border-b md:border-b-0 md:border-r border-ink">
               <p className="label mono-cond">Model</p>
-              <h1 id="cover-heading" className="display text-[clamp(48px,7.2vw,112px)] mt-2 md:mt-3">
-                {PERSON.first}
-                <br />
-                {PERSON.last}
+              <h1 id="cover-heading" className="display text-[clamp(44px,8.8vw,132px)] mt-2 md:mt-3">
+                {PERSON.name}
               </h1>
               <p className="label mono-cond uppercase mt-4 md:mt-6 max-w-[48ch]">
                 {PERSON.craft.join(' / ')}
