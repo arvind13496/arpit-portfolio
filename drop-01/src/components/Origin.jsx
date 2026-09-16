@@ -32,7 +32,7 @@ export default function Origin() {
           </dl>
           <p className="label px-4 py-2 border-t border-ink flex justify-between">
             <span>Status</span>
-            <span className="bg-ink text-paper px-2 font-bold">Active</span>
+            <span className="bg-ink text-paper px-2 font-bold">{ORIGIN.status}</span>
           </p>
         </div>
 

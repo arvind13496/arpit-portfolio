@@ -2,27 +2,33 @@ import { DROP, PERSON, PASSPORT, RESUME, STATEMENT, OFF_THE_BOOKS } from '../dat
 
 // Career history as a statement of account: the headline facts from the
 // résumé print as lines, and the total counts them.
+// Right-aligning a value works on a receipt when the value is a number. These
+// are four-line lists, and ranging them right left every line with a different
+// left edge — the section read as broken type. Same two-column row as the
+// register elsewhere on the page, so every value starts on one axis.
 function Line({ k, children }) {
   return (
-    <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-1.5 border-b border-dotted border-rule items-baseline">
-      <dt className="label mono-cond shrink-0">{k}</dt>
-      <dd className="text-right uppercase text-sm ml-auto max-w-full md:max-w-[32ch]">{children}</dd>
+    <div className="grid grid-cols-[minmax(0,10ch)_minmax(0,1fr)] gap-x-4 gap-y-1 py-1.5 border-b border-dotted border-rule items-baseline">
+      <dt className="label mono-cond">{k}</dt>
+      <dd className="uppercase text-sm">{children}</dd>
     </div>
   );
 }
 
 export default function Receipt() {
-  const { dayJob } = PERSON;
   return (
     <section id="statement" aria-labelledby="statement-heading" className="border-b-2 border-ink">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
-        <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
+        {/* The crate beside this column is twice its height, so the intro rides
+            the middle of the row instead of stacking at the top above 400px of
+            bare paper. */}
+        <div className="col-span-12 md:col-span-5 flex flex-col gap-4 md:justify-center">
           <h2 id="statement-heading" className="head text-[clamp(32px,3.8vw,58px)]">
             Statement of account
           </h2>
           <div className="read max-w-[58ch] flex flex-col gap-4">
             <p>
-              {PERSON.first} runs products on the {dayJob.unit} desk at {dayJob.org}. After hours he writes — the eight briefs on the manifest, a foley reel, a studio session — and keeps seven pairs in rotation, all of them further down the page. {PERSON.school} alumnus, based in {PERSON.city}.
+              {PERSON.first} is, summarised in one word, an enthusiast. The things he's enthusiastic about: sneakers, music, sound, copywriting, marketing and interesting products. Scroll down and you'll find traces of his work in each of them.
             </p>
             <p>
               The statement holds the headline facts, then the ones a résumé leaves out. The résumé itself is one page.
