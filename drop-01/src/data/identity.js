@@ -30,11 +30,16 @@ export const FILLS = {
   VOCAL_RUNTIME: null,
 };
 
-// The passport-size photo on the statement of account: a 3:4 crop of a
-// supplied photograph, served at 240x320 for an 84px box.
+// The passport-size photo on the statement of account. Its own photograph
+// now, front-on against a plain wall, framed to passport convention — head
+// at 58% of the height, a small gap above it, the collar in. It used to be a
+// crop of the cover portrait, which put the same face and the same sunset in
+// two consecutive folds. Served at 240x320 for an 84px box, two-tone on the
+// ink→paper ramp like every other secondary photograph here.
 export const PASSPORT = { src: passport, w: 240, h: 320 };
 
-// The cover portrait: a 4:5 crop of the same photograph, served at 800x1000.
+// The cover portrait: a 4:5 crop, served at 800x1000. The hero shot, and the
+// one photograph of him that stays in full colour.
 export const PORTRAIT = { src: portrait, w: 800, h: 1000, alt: 'Arpit at a monument at sunset, looking over his shoulder and smiling' };
 
 // The résumé lives on Google Drive, not in this repository. Set the href
