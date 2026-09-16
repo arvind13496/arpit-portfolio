@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import Q from './Q.jsx';
 
-// The full lot in a native <dialog>: the mockup, full width, and nothing
-// else — the brief lives on the card that opened this, and the mockup is
-// the work, not a description of it.
+// The full lot in a native <dialog>: the whole brief, then the mockups at
+// full width. The card that opened this carries a 90-character teaser, so the
+// brief in full belongs here. Nothing else is set as text — the headline and
+// the copy are inside the mockups themselves.
 export default function LotDialog({ lots, active, onRequestClose, onNavigate }) {
   const ref = useRef(null);
   const triggerRef = useRef(null);
@@ -65,6 +66,18 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
           <Q>CLOSE</Q>
           <span className="sr-only">Close lot {active.lot}</span>
         </button>
+      </div>
+
+      {/* The card shows a 90-character teaser, so the whole brief lives here,
+          where there is room for it. This is the only text set on the page in
+          the dialog: his headline and copy are inside the mockups, and
+          repeating them underneath would show the same words twice. */}
+      <div className="px-4 md:px-6 pt-4 md:pt-6">
+        <div className="border border-ink bg-paper p-4 md:p-5 flex flex-col gap-2">
+          <p className="label mono-cond">The brief</p>
+          <p className="read text-base max-w-[76ch]">{active.brief}</p>
+          {active.note && <p className="label">{active.note}</p>}
+        </div>
       </div>
 
       <div className="p-4 md:p-6">

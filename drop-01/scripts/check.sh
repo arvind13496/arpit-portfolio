@@ -79,6 +79,13 @@ h=$(grep -rnIE --include='*.jsx' 'aria-label="[^"]*[“”"][^"]*"' "$SRC")
 h=$(grep -rnIE 'opacity-0\b|IntersectionObserver|data-reveal|animate-(fade|in)' "$SRC")
 [ -z "$h" ] && pass "13 content visible by default" || { bad "13 visibility gated on animation"; hits "$h"; }
 
+# 14 — card teasers stay inside the 90-character budget. The cards sit at one
+# height only while every teaser fits roughly a line and a half; a long one
+# silently makes its row ragged again, which is what this rule is here to stop.
+over=$(awk -F"'" '/^ *teaser: /{ if (length($2) > 90) printf "%s (%d chars)\n", $2, length($2) }' "$SRC/data/work.js")
+n=$(grep -c '^ *teaser: ' "$SRC/data/work.js")
+[ -z "$over" ] && pass "14 all $n card teasers ≤ 90 chars" || { bad "14 card teaser over budget"; hits "$over"; }
+
 # 15 — unsourced facts: print every FILL still outstanding.
 echo "▶ outstanding FILL tokens"
 awk '/^export const FILLS/{f=1;next} f&&/^\};/{f=0} f&&/: null/{sub(/:.*/,""); gsub(/ /,""); print "         <<FILL:" $0 ">>"}' "$SRC/data/identity.js"
