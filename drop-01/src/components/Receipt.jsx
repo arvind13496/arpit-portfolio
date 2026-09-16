@@ -61,7 +61,11 @@ export default function Receipt() {
         </div>
 
         <div className="col-span-12 md:col-span-6 md:col-start-7">
-          <div className="max-w-[390px] bg-paper border border-ink border-b-0 px-5 md:px-6 pt-5 md:pt-6">
+          {/* A little wider than the 390px a real till roll would be — the
+              long comma lists (Education, Wins, Skills) were wrapping to five
+              and six short lines at that width, which is what actually made
+              the fold feel unmanaged, not the receipt's narrowness itself. */}
+          <div className="max-w-[460px] bg-paper border border-ink border-b-0 px-5 md:px-6 pt-5 md:pt-6">
             {/* A receipt header is the one place on this page where centred
                 type is obviously deliberate rather than timid. */}
             <div className="text-center flex flex-col gap-1 pb-4 border-b border-dashed border-ink">

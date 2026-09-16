@@ -19,7 +19,7 @@ function Run({ hidden }) {
   return (
     <ul className="flex gap-0" aria-hidden={hidden || undefined}>
       {ITEMS.map((t, i) => (
-        <li key={i} className="label mono-cond whitespace-nowrap px-6 py-2 border-r border-ink">
+        <li key={i} className="label mono-cond text-[11px] whitespace-nowrap px-6 py-1.5 border-r border-ink">
           {t}
         </li>
       ))}
@@ -27,11 +27,16 @@ function Run({ hidden }) {
   );
 }
 
+// The track animates by translating -50%, which only lands on a clean seam
+// if the content is doubled: one copy scrolls fully off as the next copy
+// arrives at the start, so the loop has no visible jump. The second copy is
+// aria-hidden so a screen reader hears the manifest once, not twice.
 export default function Ticker() {
   return (
     <div className="ticker bg-paper text-ink overflow-x-auto border-b-2 border-ink" aria-label="Drop manifest">
       <div className="ticker-track">
         <Run />
+        <Run hidden />
       </div>
     </div>
   );

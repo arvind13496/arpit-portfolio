@@ -179,9 +179,19 @@
     overflow-wrap: anywhere;
   }
 
+  /* The keyframe and the hover-pause were already here; the animation itself
+     was never assigned to .ticker-track, so the bar sat still and relied on
+     overflow-x-auto for a manual drag-scroll. Wiring it up needs the track's
+     content doubled in the markup (two <Run>s back to back) so -50% lands
+     exactly on the seam between the first copy ending and the second
+     beginning — a single Run translated by half its own width would leave a
+     gap. The global prefers-reduced-motion rule in @layer base already forces
+     animation: none on every element, so this stops moving for anyone who
+     asked for that without a separate rule here. */
   .ticker-track {
     display: flex;
     width: max-content;
+    animation: ticker 50s linear infinite;
   }
   .ticker:hover .ticker-track {
     animation-play-state: paused;
