@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import Q from './Q.jsx';
 
-// The full lot in a native <dialog>: the mockup, full width, and nothing
-// else — the brief lives on the card that opened this, and the mockup is
-// the work, not a description of it.
+// The full lot in a native <dialog>: the whole brief, then the mockups at
+// full width. The card that opened this carries a 90-character teaser, so the
+// brief in full belongs here. Nothing else is set as text — the headline and
+// the copy are inside the mockups themselves.
 export default function LotDialog({ lots, active, onRequestClose, onNavigate }) {
   const ref = useRef(null);
   const triggerRef = useRef(null);
@@ -67,13 +68,25 @@ export default function LotDialog({ lots, active, onRequestClose, onNavigate }) 
         </button>
       </div>
 
+      {/* The card shows a 90-character teaser, so the whole brief lives here,
+          where there is room for it. This is the only text set on the page in
+          the dialog: his headline and copy are inside the mockups, and
+          repeating them underneath would show the same words twice. */}
+      <div className="px-4 md:px-6 pt-4 md:pt-6">
+        <div className="border border-ink bg-paper p-4 md:p-5 flex flex-col gap-2">
+          <p className="label mono-cond">The brief</p>
+          <p className="read text-base max-w-[76ch]">{active.brief}</p>
+          {active.note && <p className="label">{active.note}</p>}
+        </div>
+      </div>
+
       <div className="p-4 md:p-6">
         {/* 'pair' sets two ideas beside each other so they read as a choice;
             everything else stacks. Each frame is capped at its image's own
             pixel width so nothing is ever upscaled past its source. */}
         <figure className={active.layout === 'pair' ? 'grid gap-4 md:gap-6 md:grid-cols-2 md:items-start' : 'flex flex-col gap-4 md:gap-6'}>
           {active.mocks.map((m, k) => (
-            <div key={k} className="border border-ink shadow-hard-8 bg-paper mx-auto w-full" style={{ maxWidth: m.w }}>
+            <div key={k} className="border border-ink bg-paper mx-auto w-full" style={{ maxWidth: m.w }}>
               <img src={m.src} width={m.w} height={m.h} alt={m.alt} loading="lazy" className="block w-full h-auto" />
             </div>
           ))}

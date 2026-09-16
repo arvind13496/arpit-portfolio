@@ -59,7 +59,7 @@ export const OFF_THE_BOOKS = [
 // His thesis line, verbatim.
 export const RULE = {
   text: 'I wouldn’t have a problem walking a mile in someone else’s shoes. The shoes must be cool tho — and my size',
-  aside: '(UK 10 if you’re wondering)',
+  aside: '(if you’re wondering)',
 };
 
 // The 2016 origin, verbatim in substance and now in third person to match

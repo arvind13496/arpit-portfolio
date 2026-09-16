@@ -17,6 +17,11 @@ import dove from '../assets/dove.webp';
 // words, verbatim — they carry the sr-only caption in the dialog, since the
 // words themselves live inside the mockups as pixels.
 //
+// `teaser` is the card's line, capped at 90 characters so eight cards sit at
+// one height; `brief` is the whole brief and belongs to the dialog. The briefs
+// run 40 to 250 characters as written, and setting that range on the cards was
+// what made the grid ragged.
+//
 // `mocks` is every image of the piece, in the order he wrote the copy for it.
 // `layout` says how the dialog sets them: 'single' for one image, 'stack' for
 // placements that are too wide to sit beside each other, 'pair' for two ideas
@@ -28,6 +33,7 @@ export const LOTS = [
     client: 'Liquid Death',
     format: '404 page',
     cta: 'See the 404 page',
+    teaser: 'Make an error 404 page for Liquid Death.',
     brief: 'Make an error 404 page for Liquid Death.',
     line: 'THIS PAGE IS DEAD, BURIED.',
     copy: [
@@ -47,6 +53,7 @@ export const LOTS = [
     client: 'Mailchimp',
     format: 'cold email',
     cta: 'Read the email',
+    teaser: 'A cold email to a founder who runs on Instagram and has never sent one.',
     brief: 'Write a cold email from Mailchimp to a D2C founder who runs everything on Instagram and has never sent a marketing email.',
     line: 'Put a foot into the doors of your customers’ inbox.',
     copy: [
@@ -64,6 +71,7 @@ export const LOTS = [
     client: 'Duolingo',
     format: 'metro-coach wrap',
     cta: 'See all three placements',
+    teaser: 'Write a full metro-coach wrap for Duolingo.',
     brief: 'Write a full metro-coach wrap for Duolingo.',
     line: 'Jitni der scroll karne me waste kiya, utni der me French me ask out karna seekh jaate. Anyways, your loss.',
     copy: [
@@ -85,6 +93,7 @@ export const LOTS = [
     client: 'The Economist',
     format: 'billboard',
     cta: 'See both billboards',
+    teaser: 'One line on a flyover, read in three seconds at 60kmph.',
     brief: 'Write a hoarding for The Economist. One line, on a flyover, read in 3 seconds at 60kmph. No subhead, no explanation.',
     line: 'Make them mean it when they say ‘great speaking with you.’',
     copy: [
@@ -103,6 +112,7 @@ export const LOTS = [
     client: 'Mad Ad Woman',
     format: 'Instagram ad, long copy',
     cta: 'Read the ad',
+    teaser: 'Sell a copywriting batch as one story, in long copy.',
     brief: 'Write an ad to sell the ‘Mad Ad Woman’ copy batch. Find insights only someone who’s been through it could know, as a single story with long copy.',
     line: 'Copywriting is a creative task, and creativity is subjective. Then how do you know whether your copy is good or bad?',
     copy: [
@@ -123,6 +133,7 @@ export const LOTS = [
     client: 'Diesel',
     format: 'cinema ad, 45–60s',
     cta: 'See the storyboard',
+    teaser: 'A cinema ad for Diesel: brave-stupid over safe-smart.',
     brief: 'Write a 45–60 second cinema ad for Diesel, playing right before a Friday-night blockbuster. The crowd just paid ₹600 for popcorn — they already made one gloriously dumb, joyful decision. Use it. Diesel celebrates the brave-stupid over the safe-smart.',
     line: 'Be Bold. Be Stupid.',
     copy: [
@@ -142,6 +153,7 @@ export const LOTS = [
     client: 'The Whole Truth',
     format: 'insert card',
     cta: 'Read both cards',
+    teaser: 'The insert card inside someone’s first-ever order.',
     brief: 'Write the little insert card inside someone’s first-ever Whole Truth order.',
     line: 'The Whole Truth is that this product is not the sweetest out there. And it’s certainly not the cheapest.',
     copy: [
@@ -161,6 +173,7 @@ export const LOTS = [
     client: 'Dove',
     format: 'long-copy magazine ad',
     cta: 'Read the ad',
+    teaser: 'A long-copy magazine ad about real skin.',
     brief: 'Write a long-copy magazine ad for Dove about real skin.',
     line: 'This is what your skin is supposed to look like.',
     copy: [

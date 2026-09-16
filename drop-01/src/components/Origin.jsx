@@ -9,12 +9,12 @@ export default function Origin() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-6">
         <div className="col-span-12">
           <h2 id="kyc-heading" className="head text-[clamp(32px,3.8vw,58px)]">
-            This obsession started in {ORIGIN.year}
+            My obsession started in {ORIGIN.year}
           </h2>
         </div>
 
         <figure className="col-span-12 sm:col-span-6 md:col-span-3">
-          <div className="border border-ink shadow-hard-8 bg-paper">
+          <div className="border border-ink bg-paper">
             <img src={aboutPhoto} width="460" height="480" alt="Arpit holding a green sneaker up to his face" loading="lazy" className="block w-full h-auto" />
           </div>
           <figcaption className="label mt-4">Photo ID · account holder</figcaption>
