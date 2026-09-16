@@ -28,7 +28,7 @@ export default function Manifest({ onOpen }) {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-14 md:py-28 grid grid-cols-12 gap-4 md:gap-6">
         <div className="col-span-12 flex flex-wrap items-center gap-4">
           <h2 id="manifest-heading" className="head text-[clamp(32px,3.8vw,58px)]">
-            The work
+            My work
           </h2>
           <span className="label border border-ink px-2 py-1">Spec work</span>
         </div>

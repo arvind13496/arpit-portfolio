@@ -39,7 +39,7 @@ export default function Receipt() {
             400px of bare paper. */}
         <div className="col-span-12 md:col-span-5 flex flex-col gap-4 md:justify-center">
           <h2 id="statement-heading" className="head text-[clamp(32px,3.8vw,58px)]">
-            Statement of account
+            My statement of account
           </h2>
           <div className="read max-w-[58ch] flex flex-col gap-4">
             <p>
