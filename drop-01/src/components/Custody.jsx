@@ -1,7 +1,15 @@
 import { CUSTODY } from '../data/closet.js';
+import Barcode from './Barcode.jsx';
 
-// Seven pairs, one register. Image, brand, model, colourway — set like a
-// shoebox label and nothing else.
+// Seven pairs, each set as a small shoebox end label — the same object the
+// cover is, at crate scale. Cover is his box; these are theirs.
+//
+// BAND is the one thing being compared: 'ink' makes every crate a black-banded
+// label matching the cover, 'blue' keeps the register colour the fold has
+// carried until now. Flip it and rebuild to see the other version.
+const BAND = 'blue';
+const bandClass = BAND === 'ink' ? 'bg-ink text-paper' : 'bg-blue text-paper';
+
 const pad = (n) => String(n).padStart(2, '0');
 
 export default function Custody() {
@@ -25,7 +33,7 @@ export default function Custody() {
               and the short final row reads as what it is: seven pairs. */}
           {CUSTODY.map((p) => (
             <li key={p.id} className="col-span-12 sm:col-span-6 lg:col-span-4 border border-ink bg-paper text-ink flex flex-col">
-              <p className="label flex flex-wrap justify-between gap-x-4 bg-blue text-paper px-4 py-3 border-b border-ink">
+              <p className={`label flex flex-wrap justify-between gap-x-4 px-4 py-3 border-b border-ink ${bandClass}`}>
                 <span className="mono-wide">Pair {p.n}</span>
                 <span>In rotation</span>
               </p>
@@ -33,6 +41,7 @@ export default function Custody() {
                 <div className="bg-white aspect-[5/4] lg:aspect-auto lg:h-[210px] flex items-center justify-center overflow-hidden">
                   <img src={p.image.src} width={p.image.w} height={p.image.h} alt={`${p.brand} ${p.model}`} loading="lazy" className="block h-full w-auto max-w-full object-contain" />
                 </div>
+                {/* The label cells, in the order a box end carries them. */}
                 <div className="flex flex-col gap-3">
                   <h3 className="head-sm text-[clamp(22px,2vw,30px)]">
                     <span className="block label font-mono mb-1">{p.brand}</span>
@@ -44,6 +53,11 @@ export default function Custody() {
                       <span className="px-2 font-bold bg-pink text-ink">Name unverified</span>
                     </p>
                   )}
+                </div>
+                {/* The foot of an end label: the code that identifies the pair. */}
+                <div className="mt-auto pt-3 border-t border-ink">
+                  <Barcode seed={p.id} height={26} />
+                  <p className="label mono-wide mt-1">{pad(CUSTODY.length)} · {p.n} · {p.id.toUpperCase()}</p>
                 </div>
               </div>
             </li>
